@@ -65,8 +65,7 @@ class GitHubSignupViewModel {
             validatedPasswordRepeated
         ) { username, password, repeatPassword in
             username.isValid && password.isValid && repeatPassword.isValid
-            }
-            .distinctUntilChanged()
+        }.distinctUntilChanged()
 
         //获取最新的用户名和密码
         let usernameAndPassword = Driver.combineLatest(input.username, input.password) {

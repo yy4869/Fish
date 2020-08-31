@@ -65,8 +65,7 @@ class GitHubSignupService {
     }
 
     //验证二次输入的密码
-    func validateRepeatedPassword(_ password: String, repeatedPassword: String)
-        -> ValidationResult {
+    func validateRepeatedPassword(_ password: String, repeatedPassword: String) -> ValidationResult {
         //判断密码是否为空
         if repeatedPassword.count == 0 {
             return .empty

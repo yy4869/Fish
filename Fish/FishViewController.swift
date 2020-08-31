@@ -14,6 +14,9 @@ import SnapKit
 
 class FishViewController: UIViewController {
 
+    private lazy var topMargin: UILayoutGuide = UILayoutGuide()
+    private lazy var bottomMargin: UILayoutGuide = UILayoutGuide()
+
     // 用户名输入框、以及验证结果显示标签
     private lazy var usernameTextField: YYTextField = {
         let view = YYTextField()
@@ -73,6 +76,7 @@ class FishViewController: UIViewController {
         static let buttonMargin: CGFloat = 20
         static let commonMargin: CGFloat = 16
         static let labelHeight: CGFloat = 30
+        static let marginRate: CGFloat = 3
     }
 
     override func viewDidLoad() {
@@ -84,10 +88,17 @@ class FishViewController: UIViewController {
 
     private func setupUserInterface() {
         view.backgroundColor = .white
+
+        view.addLayoutGuide(topMargin)
+        topMargin.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(FishLayoutUtils.topMargin)
+            make.leading.trailing.equalToSuperview()
+        }
+
         view.addSubview(usernameTextField)
         usernameTextField.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Metric.commonMargin)
-            make.top.equalToSuperview().offset(150)
+            make.top.equalTo(topMargin.snp.bottom)
             make.height.equalTo(Metric.buttonHeight)
         }
 
@@ -129,8 +140,16 @@ class FishViewController: UIViewController {
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Metric.commonMargin)
-            make.bottom.equalToSuperview().offset(-300)
             make.height.equalTo(Metric.buttonHeight)
+            make.top.equalTo(repeatedPasswordLabel.snp.bottom).offset(Metric.buttonMargin)
+        }
+
+        view.addLayoutGuide(bottomMargin)
+        bottomMargin.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(topMargin.snp.height).multipliedBy(3)
+            make.top.equalTo(signUpButton.snp.bottom)
         }
     }
 
@@ -183,7 +202,8 @@ class FishViewController: UIViewController {
     //详细提示框
     func showMessage(_ message: String) {
         let alertController = UIAlertController(title: nil,
-                                                message: message, preferredStyle: .alert)
+                                                message: message,
+                                                preferredStyle: .alert)
         let okAction = UIAlertAction(title: "确定", style: .cancel, handler: nil)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
