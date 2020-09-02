@@ -1,5 +1,5 @@
 //
-//  FishViewController.swift
+//  LoginViewController.swift
 //  Fish
 //
 //  Created by yaoyuan on 2020/8/27.
@@ -12,8 +12,19 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class FishViewController: UIViewController {
+class LoginViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
+
+    struct Metric {
+        static let buttonHeight: CGFloat = 50
+        static let buttonMargin: CGFloat = 20
+        static let commonMargin: CGFloat = 16
+        static let labelHeight: CGFloat = 30
+        static let marginRate: CGFloat = 3
+        static let buttonSize: CGFloat = 24
+    }
+    
     private lazy var topMargin: UILayoutGuide = UILayoutGuide()
     private lazy var bottomMargin: UILayoutGuide = UILayoutGuide()
 
@@ -68,16 +79,16 @@ class FishViewController: UIViewController {
         button.layer.cornerRadius = 6
         return button
     }()
-
-    let disposeBag = DisposeBag()
-
-    struct Metric {
-        static let buttonHeight: CGFloat = 50
-        static let buttonMargin: CGFloat = 20
-        static let commonMargin: CGFloat = 16
-        static let labelHeight: CGFloat = 30
-        static let marginRate: CGFloat = 3
-    }
+    
+    private lazy var adminButton: UIButton = {
+        let btn = UIButton()
+        btn.clipsToBounds = true
+        btn.layer.cornerRadius = Metric.buttonSize / 2
+        btn.setBackgroundColor(.green, forState: .normal)
+        btn.setBackgroundColor(UIColor.green.withAlphaComponent(0.5), forState: .highlighted)
+        btn.addTarget(self, action: #selector(adminButtonPressed(_:)), for: .touchUpInside)
+        return btn
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,6 +162,13 @@ class FishViewController: UIViewController {
             make.height.equalTo(topMargin.snp.height).multipliedBy(3)
             make.top.equalTo(signUpButton.snp.bottom)
         }
+        
+        view.addSubview(adminButton)
+        adminButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-50)
+            make.top.equalToSuperview().offset(50 + FishLayoutUtils.topMargin)
+            make.size.equalTo(24)
+        }
     }
 
     private func bind() {
@@ -167,7 +185,7 @@ class FishViewController: UIViewController {
                 signupService: GitHubSignupService()
             )
         )
-
+        
         //用户名验证结果绑定
         viewModel.validatedUsername
             .drive(usernameLabel.rx.validationResult)
@@ -193,8 +211,11 @@ class FishViewController: UIViewController {
 
         //注册结果绑定
         viewModel.signupResult
-            .drive(onNext: { [unowned self] result in
-                self.showMessage("注册" + (result ? "成功" : "失败") + "!")
+            .drive(onNext: { [unowned self] success in
+                self.showMessage("注册" + (success ? "成功" : "失败") + "!")
+                if success {
+                    self.dismissLoginView()
+                }
             })
             .disposed(by: disposeBag)
     }
@@ -208,4 +229,28 @@ class FishViewController: UIViewController {
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    private func dismissLoginView() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func adminButtonPressed(_ sender: UIButton) {
+        let alertController = UIAlertController(title: nil,
+                                                message: "主人，你来啦～",
+                                                preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "确定", style: .default) { _ in
+            let success = alertController.textFields?.first?.text == "4869"
+            ToastView.show(hint: success ? "起飞～" : "不对👁")
+            if success {
+                self.dismissLoginView()
+            }
+        }
+        alertController.addAction(confirmAction)
+        alertController.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        alertController.addTextField { textField in
+            textField.placeholder = "验明真身"
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }

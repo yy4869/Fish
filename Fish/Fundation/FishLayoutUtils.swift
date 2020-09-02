@@ -40,12 +40,17 @@ struct FishLayoutUtils {
     static var isFullScreen: Bool {
         guard let delegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
             let window = delegate.window else {
-                return false
+            return false
         }
         return window.safeAreaInsets.bottom > 0
     }
+
 //    首先,刘海屏在iOS 11之后才推出,而重中之重的是safeAreaInsets属性
 //    以下分别是竖屏与横屏的时候,safeAreaInsets打印的值
 //    UIEdgeInsets(top: 44.0, left: 0.0, bottom: 34.0, right: 0.0)
 //    UIEdgeInsets(top: 0.0, left: 44.0, bottom: 21.0, right: 44.0)
+
+    static var keyWindow: UIView? {
+        UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+    }
 }

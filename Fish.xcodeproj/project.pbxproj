@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */; };
+		2E5BEB5424FFF89D0068DA1B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5324FFF89D0068DA1B /* StringExtension.swift */; };
+		2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5524FFFABA0068DA1B /* ToastView.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
 		2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92724F657C100524436 /* AppDelegate.swift */; };
 		2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92924F657C100524436 /* SceneDelegate.swift */; };
@@ -19,7 +22,7 @@
 		2EFEF94024F7A89700524436 /* GitHubSignupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF93F24F7A89700524436 /* GitHubSignupService.swift */; };
 		2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94124F7A91100524436 /* GitHubSignupViewModel.swift */; };
 		2EFEF94424F7A92D00524436 /* BindingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94324F7A92D00524436 /* BindingExtensions.swift */; };
-		2EFEF94624F7A95A00524436 /* FishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94524F7A95A00524436 /* FishViewController.swift */; };
+		2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94524F7A95A00524436 /* LoginViewController.swift */; };
 		2EFEF94924F7B18100524436 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94824F7B18100524436 /* UIColorExtension.swift */; };
 		2EFEF94B24F7B97000524436 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94A24F7B97000524436 /* UIImageExtension.swift */; };
 		2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineViewController.swift; sourceTree = "<group>"; };
+		2E5BEB5324FFF89D0068DA1B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		2E5BEB5524FFFABA0068DA1B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
 		2EFEF92424F657C100524436 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFEF92724F657C100524436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +48,7 @@
 		2EFEF93F24F7A89700524436 /* GitHubSignupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignupService.swift; sourceTree = "<group>"; };
 		2EFEF94124F7A91100524436 /* GitHubSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSignupViewModel.swift; sourceTree = "<group>"; };
 		2EFEF94324F7A92D00524436 /* BindingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingExtensions.swift; sourceTree = "<group>"; };
-		2EFEF94524F7A95A00524436 /* FishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewController.swift; sourceTree = "<group>"; };
+		2EFEF94524F7A95A00524436 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EFEF94824F7B18100524436 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2EFEF94A24F7B97000524436 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -107,7 +113,9 @@
 				2EFEF93F24F7A89700524436 /* GitHubSignupService.swift */,
 				2EFEF94124F7A91100524436 /* GitHubSignupViewModel.swift */,
 				2EFEF94324F7A92D00524436 /* BindingExtensions.swift */,
-				2EFEF94524F7A95A00524436 /* FishViewController.swift */,
+				2EFEF94524F7A95A00524436 /* LoginViewController.swift */,
+				2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */,
+				2E5BEB5524FFFABA0068DA1B /* ToastView.swift */,
 			);
 			path = Fish;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 				2EFEF94824F7B18100524436 /* UIColorExtension.swift */,
 				2EFEF94A24F7B97000524436 /* UIImageExtension.swift */,
 				2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */,
+				2E5BEB5324FFF89D0068DA1B /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -263,13 +272,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EFEF94624F7A95A00524436 /* FishViewController.swift in Sources */,
+				2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */,
+				2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */,
 				2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */,
 				2EFEF94024F7A89700524436 /* GitHubSignupService.swift in Sources */,
 				2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */,
+				2E5BEB5424FFF89D0068DA1B /* StringExtension.swift in Sources */,
 				2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */,
 				2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */,
 				2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */,
+				2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */,
 				2EFEF92C24F657C100524436 /* ContentView.swift in Sources */,
 				2EFEF94424F7A92D00524436 /* BindingExtensions.swift in Sources */,
 				2EFEF94F24F7D03700524436 /* YYTextField.swift in Sources */,
