@@ -1,5 +1,5 @@
 //
-//  YYTextField.swift
+//  BaseTextField.swift
 //  Fish
 //
 //  Created by yaoyuan on 2020/8/27.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class YYTextField: UITextField {
+class BaseTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUserInterface()

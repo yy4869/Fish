@@ -11,8 +11,8 @@ import UIKit
 
 class MainTimeLineViewController: UIViewController {
 
-    private lazy var addMoreButton: UIButton = {
-        let button = UIButton()
+    private lazy var addMoreButton: BaseButton = {
+        let button = BaseButton()
         button.setBackgroundImage(UIImage(named: "PlusCircle"), for: .normal)
         button.addTarget(self, action: #selector(addMoreButtonPressed(_:)), for: .touchUpInside)
         return button
@@ -45,5 +45,7 @@ class MainTimeLineViewController: UIViewController {
 
     @objc private func addMoreButtonPressed(_ sender: UIButton) {
         ToastView.show(hint: "+1")
+        let vc = SpringInterfaceViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

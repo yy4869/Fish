@@ -29,8 +29,8 @@ class LoginViewController: UIViewController {
     private lazy var bottomMargin: UILayoutGuide = UILayoutGuide()
 
     // 用户名输入框、以及验证结果显示标签
-    private lazy var usernameTextField: YYTextField = {
-        let view = YYTextField()
+    private lazy var usernameTextField: BaseTextField = {
+        let view = BaseTextField()
         view.placeholder = "用户名"
         return view
     }()
@@ -42,8 +42,8 @@ class LoginViewController: UIViewController {
     }()
 
     // 密码输入框、以及验证结果显示标签
-    private lazy var passwordTextField: YYTextField = {
-        let view = YYTextField()
+    private lazy var passwordTextField: BaseTextField = {
+        let view = BaseTextField()
         view.placeholder = "密码"
         return view
     }()
@@ -55,8 +55,8 @@ class LoginViewController: UIViewController {
     }()
 
     // 重复密码输入框、以及验证结果显示标签
-    private lazy var repeatedPasswordTextField: YYTextField = {
-        let view = YYTextField()
+    private lazy var repeatedPasswordTextField: BaseTextField = {
+        let view = BaseTextField()
         view.placeholder = "重复密码"
         return view
     }()
@@ -95,6 +95,10 @@ class LoginViewController: UIViewController {
         title = "🐟"
         setupUserInterface()
         bind()
+        test()
+    }
+
+    private func test() {
     }
 
     private func setupUserInterface() {
