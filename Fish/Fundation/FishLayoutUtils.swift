@@ -19,12 +19,12 @@ struct FishLayoutUtils {
     }
 
     /// 刘海屏
-    static var topPadding: CGFloat {
+    static var notchMargin: CGFloat {
         isFullScreen && !isiPad ? 24 : 0
     }
 
     static var topMargin: CGFloat {
-        topPadding + 64
+        notchMargin + 64
     }
 
     /// 底部安全区高度

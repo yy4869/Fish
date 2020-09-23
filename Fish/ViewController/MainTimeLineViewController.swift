@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import VersaPlayer
 
-class MainTimeLineViewController: UIViewController {
+class MainTimeLineViewController: BaseViewController {
 
     private lazy var addMoreButton: BaseButton = {
         let button = BaseButton()
@@ -29,8 +30,7 @@ class MainTimeLineViewController: UIViewController {
     }
 
     private func setupUserInterface() {
-        view.backgroundColor = .white
-        view.addSubview(addMoreButton)
+        contentView.addSubview(addMoreButton)
         addMoreButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(40)
@@ -45,7 +45,5 @@ class MainTimeLineViewController: UIViewController {
 
     @objc private func addMoreButtonPressed(_ sender: UIButton) {
         ToastView.show(hint: "+1")
-        let vc = SpringInterfaceViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
