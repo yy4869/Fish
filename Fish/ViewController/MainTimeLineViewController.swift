@@ -11,6 +11,18 @@ import UIKit
 
 class MainTimeLineViewController: BaseViewController {
 
+    private lazy var timeDashLine: DashLine = {
+        let view = DashLine(lineColor: .UI_greyColor, isVertical: true, lineDash: 4, margin: 4)
+        return view
+    }()
+
+    private lazy var searchButton: BaseCornerRadiusButton = {
+        let button = BaseCornerRadiusButton()
+        button.setBackgroundColor(.UI_greyLightColor, for: .normal)
+        button.setTitle("🔍", for: .normal)
+        return button
+    }()
+
     private lazy var addMoreButton: BaseButton = {
         let button = BaseButton()
         button.setBackgroundImage(UIImage(named: "PlusCircle"), for: .normal)
@@ -22,13 +34,6 @@ class MainTimeLineViewController: BaseViewController {
         let view = FishToolBarStackView()
         view.delegate = self
         return view
-    }()
-
-    private lazy var noteButton: BaseCornerRadiusButton = {
-        let button = BaseCornerRadiusButton()
-        button.backgroundColor = .gray
-        button.setTitle("笔记", for: .normal)
-        return button
     }()
 
     override func viewDidLoad() {
@@ -49,17 +54,23 @@ class MainTimeLineViewController: BaseViewController {
             make.size.equalTo(40)
         }
 
-        view.addSubview(noteButton)
-        noteButton.snp.makeConstraints { make in
+        view.addSubview(searchButton)
+        searchButton.snp.makeConstraints { make in
             make.leading.top.equalTo(headerView).offset(16)
-            make.size.equalTo(CGSize(width: 80, height: 36))
+            make.size.equalTo(40)
+        }
+
+        view.addSubview(timeDashLine)
+        timeDashLine.snp.makeConstraints { make in
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalTo(4)
         }
 
         view.addSubview(toolsBar)
         toolsBar.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Metric.horizonMargin)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(Metric.buttonHeight)
+            make.height.equalTo(30)
         }
     }
 

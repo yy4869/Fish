@@ -39,7 +39,7 @@ class FishToolBarStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         distribution = .fillEqually
-        alignment = .center
+        alignment = .fill
         axis = .horizontal
         spacing = 10
 
@@ -53,8 +53,9 @@ class FishToolBarStackView: UIStackView {
     private func setupUI() {
         for type in FishToolType.allCases {
             let tool = BaseCornerRadiusButton()
-            tool.backgroundColor = .UI_greyLightColor
+            tool.setBackgroundColor(.UI_greyLightColor, for: .normal)
             tool.setTitle(type.desc(), for: .normal)
+            tool.titleLabel?.font = .systemFont(ofSize: 13)
             tool.addTarget(self, action: #selector(toolBarPressed(_:)), for: .touchUpInside)
             tool.tag = type.rawValue
             addArrangedSubview(tool)

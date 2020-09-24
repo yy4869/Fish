@@ -12,36 +12,32 @@ import UIKit
 class BaseButton: UIButton {
 
     private let highlightedAlpha: CGFloat = 0.7
-    private let disabledAlpha: CGFloat = 0.2
 
+    override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
+        super.setTitleColor(color, for: state)
+        if state == .normal {
+            setTitleColor(color?.withAlphaComponent(highlightedAlpha), for: .highlighted)
+        }
+    }
+
+    override func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
+        super.setBackgroundColor(color, for: state)
+        if state == .normal {
+            setBackgroundColor(color?.withAlphaComponent(highlightedAlpha), for: .highlighted)
+        }
+    }
 
     override func setImage(_ image: UIImage?, for state: UIControl.State) {
         super.setImage(image, for: state)
         if state == .normal {
-            let highlightedImage = image?.alpha(highlightedAlpha)
-            let disabledImage = image?.alpha(disabledAlpha)
-            super.setImage(highlightedImage, for: .highlighted)
-            super.setImage(disabledImage, for: .disabled)
-        } else if state == .selected {
-            let highlightedImage = image?.alpha(highlightedAlpha)
-            let disabledImage = image?.alpha(disabledAlpha)
-            super.setImage(highlightedImage, for: [.highlighted, .selected])
-            super.setImage(disabledImage, for: [.disabled, .selected])
+            super.setImage(image?.alpha(highlightedAlpha), for: .highlighted)
         }
     }
 
     override func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) {
         super.setBackgroundImage(image, for: state)
         if state == .normal {
-            let highlightedImage = image?.alpha(highlightedAlpha)
-            let disabledImage = image?.alpha(disabledAlpha)
-            super.setBackgroundImage(highlightedImage, for: .highlighted)
-            super.setBackgroundImage(disabledImage, for: .disabled)
-        } else if state == .selected {
-            let highlightedImage = image?.alpha(highlightedAlpha)
-            let disabledImage = image?.alpha(disabledAlpha)
-            super.setBackgroundImage(highlightedImage, for: [.highlighted, .selected])
-            super.setBackgroundImage(disabledImage, for: [.disabled, .selected])
+            super.setBackgroundImage(image?.alpha(highlightedAlpha), for: .highlighted)
         }
     }
 

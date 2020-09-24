@@ -73,8 +73,8 @@ class LoginViewController: UIViewController {
         button.setTitle("注册", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.UI_darkMediumColor, for: .disabled)
-        button.setBackgroundColor(.UI_orangeColor, forState: .normal)
-        button.setBackgroundColor(.UI_greyLightColor, forState: .disabled)
+        button.setBackgroundColor(.UI_orangeColor, for: .normal)
+        button.setBackgroundColor(.UI_greyLightColor, for: .disabled)
         button.clipsToBounds = true
         button.layer.cornerRadius = 6
         return button
@@ -84,8 +84,8 @@ class LoginViewController: UIViewController {
         let btn = UIButton()
         btn.clipsToBounds = true
         btn.layer.cornerRadius = Metric.buttonSize / 2
-        btn.setBackgroundColor(.green, forState: .normal)
-        btn.setBackgroundColor(UIColor.green.withAlphaComponent(0.5), forState: .highlighted)
+        btn.setBackgroundColor(.green, for: .normal)
+        btn.setBackgroundColor(UIColor.green.withAlphaComponent(0.5), for: .highlighted)
         btn.addTarget(self, action: #selector(adminButtonPressed(_:)), for: .touchUpInside)
         return btn
     }()
