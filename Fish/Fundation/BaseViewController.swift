@@ -10,23 +10,12 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController {
+
     struct Metric {
-        static let buttonHeight: CGFloat = 50
-        static let buttonMargin: CGFloat = 20
-        static let commonMargin: CGFloat = 16
-        static let labelHeight: CGFloat = 30
-        static let marginRate: CGFloat = 3
-        static let buttonSize: CGFloat = 24
+        static let navigationBarHeight: CGFloat = 44
     }
 
-    private lazy var safeHeader: UILayoutGuide = UILayoutGuide()
-    //    private lazy var safeHeader: UIView = {
-    //        let view = UIView()
-    //        view.backgroundColor = .white
-    //        return view
-    //    }()
-
-    private lazy var headerView: UIView = {
+    lazy var headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         return view
@@ -47,63 +36,56 @@ class BaseViewController: UIViewController {
         return label
     }()
 
-    lazy var leftButton: BaseButton = {
+    private lazy var leftButton: BaseButton = {
         let button = BaseButton()
         button.imageView?.contentMode = .center
         button.setImage(UIImage(named: "TTNavigationBarBack"), for: .normal)
         return button
     }()
 
-    lazy var rightButton: BaseButton = {
+    private lazy var rightButton: BaseButton = {
         let button = BaseButton()
         button.imageView?.contentMode = .center
         return button
     }()
 
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .UI_whiteBackgroundColor
-        return view
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "🐟"
-        setupUserInterface()
+        // 隐藏系统自带导航栏，如果需要，使用自定义导航栏
+        navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = .UI_whiteBackgroundColor
+        setTitle("🐟")
+        setupNavigationBar()
     }
 
-    private func setupUserInterface() {
-        view.backgroundColor = .white
-
-        view.addLayoutGuide(safeHeader)
-        safeHeader.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top)
-        }
-
+    private func setupNavigationBar() {
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(safeHeader.snp.bottom)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalTo(view)
-            make.height.equalTo(44)
+            make.height.equalTo(Metric.navigationBarHeight)
         }
+
         headerView.addSubview(headerShadowView)
         headerShadowView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalTo(headerView)
             make.height.equalTo(0.5)
         }
+
         headerView.addSubview(leftButton)
         leftButton.snp.makeConstraints { make in
             make.centerX.equalTo(headerView.snp.leading).offset(24)
-            make.width.height.equalTo(44)
+            make.width.height.equalTo(Metric.navigationBarHeight)
             make.centerY.equalTo(headerView)
         }
+
         headerView.addSubview(rightButton)
         rightButton.snp.makeConstraints { make in
             make.trailing.equalTo(headerView).offset(-2)
-            make.width.height.greaterThanOrEqualTo(44)
+            make.width.height.greaterThanOrEqualTo(Metric.navigationBarHeight)
             make.centerY.equalTo(headerView)
         }
+
         headerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.center.equalTo(headerView)
@@ -112,12 +94,28 @@ class BaseViewController: UIViewController {
         }
         rightButton.setContentCompressionResistancePriority(.required, for: .horizontal)
         rightButton.setContentHuggingPriority(.required, for: .horizontal)
+    }
 
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(self.view)
-            make.top.equalTo(headerView.snp.bottom)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+    /// 是否隐藏导航栏
+    var hiddenNavigationBar = true {
+        didSet {
+            headerView.isHidden = hiddenNavigationBar
+            headerView.snp.updateConstraints { make in
+                make.height.equalTo(hiddenNavigationBar ? 0 : Metric.navigationBarHeight)
+            }
         }
+    }
+
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+}
+
+extension BaseViewController {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        #if DEBUG
+        print("🐟 [\(self.classForCoder) viewDidAppear]")
+        #endif
     }
 }
