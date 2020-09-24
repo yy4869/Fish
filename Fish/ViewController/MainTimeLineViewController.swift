@@ -8,20 +8,26 @@
 
 import Foundation
 import UIKit
-import VersaPlayer
 
 class MainTimeLineViewController: BaseViewController {
 
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .UI_whiteBackgroundColor
-        return view
-    }()
-    
     private lazy var addMoreButton: BaseButton = {
         let button = BaseButton()
         button.setBackgroundImage(UIImage(named: "PlusCircle"), for: .normal)
         button.addTarget(self, action: #selector(addMoreButtonPressed(_:)), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var toolsBar: FishToolBarStackView = {
+        let view = FishToolBarStackView()
+        view.delegate = self
+        return view
+    }()
+
+    private lazy var noteButton: BaseCornerRadiusButton = {
+        let button = BaseCornerRadiusButton()
+        button.backgroundColor = .gray
+        button.setTitle("笔记", for: .normal)
         return button
     }()
 
@@ -37,17 +43,23 @@ class MainTimeLineViewController: BaseViewController {
     }
 
     private func setupUserInterface() {
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(headerView.snp.bottom)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-        }
-        
-        contentView.addSubview(addMoreButton)
+        view.addSubview(addMoreButton)
         addMoreButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.size.equalTo(40)
+        }
+
+        view.addSubview(noteButton)
+        noteButton.snp.makeConstraints { make in
+            make.leading.top.equalTo(headerView).offset(16)
+            make.size.equalTo(CGSize(width: 80, height: 36))
+        }
+
+        view.addSubview(toolsBar)
+        toolsBar.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(Metric.horizonMargin)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(Metric.buttonHeight)
         }
     }
 
@@ -58,7 +70,12 @@ class MainTimeLineViewController: BaseViewController {
     }
 
     @objc private func addMoreButtonPressed(_ sender: UIButton) {
-//        ToastView.show(hint: "+1")
         hiddenNavigationBar = !hiddenNavigationBar
+    }
+}
+
+extension MainTimeLineViewController: FishToolBarStackViewDelegate {
+    func toolBarStackView(_ view: FishToolBarStackView, didPressButton type: FishToolType) {
+        FishPrint("press \(type.desc())")
     }
 }

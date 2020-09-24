@@ -56,3 +56,11 @@ class BaseButton: UIButton {
         }
     }
 }
+
+class BaseCornerRadiusButton: BaseButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.height / 2
+        layer.masksToBounds = true
+    }
+}

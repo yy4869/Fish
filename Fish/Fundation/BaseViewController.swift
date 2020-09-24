@@ -13,6 +13,8 @@ class BaseViewController: UIViewController {
 
     struct Metric {
         static let navigationBarHeight: CGFloat = 44
+        static let horizonMargin: CGFloat = 16
+        static let buttonHeight: CGFloat = 36
     }
 
     lazy var headerView: UIView = {
@@ -114,8 +116,6 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        #if DEBUG
-        print("🐟 [\(self.classForCoder) viewDidAppear]")
-        #endif
+        FishPrint("\(self.classForCoder) viewDidAppear")
     }
 }

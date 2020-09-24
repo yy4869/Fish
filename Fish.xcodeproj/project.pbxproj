@@ -11,6 +11,8 @@
 		2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */; };
 		2E5BEB5424FFF89D0068DA1B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5324FFF89D0068DA1B /* StringExtension.swift */; };
 		2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5524FFFABA0068DA1B /* ToastView.swift */; };
+		2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */; };
+		2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F5251C896F00F192E8 /* FishUtils.swift */; };
 		2EA830F7250F73C000E59759 /* SpringInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */; };
 		2EA830FA250F746600E59759 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F9250F746600E59759 /* GradientView.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
@@ -39,6 +41,8 @@
 		2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineViewController.swift; sourceTree = "<group>"; };
 		2E5BEB5324FFF89D0068DA1B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		2E5BEB5524FFFABA0068DA1B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishToolBarStackView.swift; sourceTree = "<group>"; };
+		2E9C30F5251C896F00F192E8 /* FishUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishUtils.swift; sourceTree = "<group>"; };
 		2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringInterfaceViewController.swift; sourceTree = "<group>"; };
 		2EA830F9250F746600E59759 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E9C30F4251C809B00F192E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2EA830F5250F738800E59759 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +131,7 @@
 		2EF842A2251B58D3009F2656 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E9C30F4251C809B00F192E8 /* View */,
 				2E5BEB5124FFEAB80068DA1B /* MainTimeLineViewController.swift */,
 			);
 			path = ViewController;
@@ -188,6 +201,7 @@
 				2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */,
 				2E0C96542500947D00CD37EC /* BaseButton.swift */,
 				2E5BEB5524FFFABA0068DA1B /* ToastView.swift */,
+				2E9C30F5251C896F00F192E8 /* FishUtils.swift */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -317,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */,
+				2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */,
 				2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */,
 				2EA830FA250F746600E59759 /* GradientView.swift in Sources */,
 				2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */,
@@ -331,6 +346,7 @@
 				2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */,
 				2EFEF92C24F657C100524436 /* ContentView.swift in Sources */,
 				2EFEF94424F7A92D00524436 /* BindingExtensions.swift in Sources */,
+				2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */,
 				2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */,
 				2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */,
 				2EFEF93E24F7A7BE00524436 /* ValidationResult.swift in Sources */,
