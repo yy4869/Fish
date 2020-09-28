@@ -8,11 +8,36 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+
+public typealias TTPermissionCallback = () -> Void
 
 class MainTimeLineViewController: BaseViewController {
 
+    private var countTime = 0
+
+    struct Constant {
+        static let taskHeight: CGFloat = 100
+        static let taskMargin: CGFloat = 32
+    }
+
     private lazy var timeDashLine: DashLine = {
         let view = DashLine(lineColor: .UI_greyColor, isVertical: true, lineDash: 4, margin: 4)
+        return view
+    }()
+
+    private lazy var scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.contentInsetAdjustmentBehavior = .never
+        return view
+    }()
+
+    private lazy var taskContainerView: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fillEqually
+        view.spacing = Constant.taskMargin
+        view.alignment = .fill
         return view
     }()
 
@@ -20,12 +45,14 @@ class MainTimeLineViewController: BaseViewController {
         let button = BaseCornerRadiusButton()
         button.setBackgroundColor(.UI_greyLightColor, for: .normal)
         button.setTitle("🔍", for: .normal)
+        button.addTarget(self, action: #selector(clearData(_:)), for: .touchUpInside)
         return button
     }()
 
     private lazy var addMoreButton: BaseButton = {
         let button = BaseButton()
         button.setBackgroundImage(UIImage(named: "PlusCircle"), for: .normal)
+        button.hitOffset = UIEdgeInsets(top: -10, left: -10, bottom: -20, right: -20)
         button.addTarget(self, action: #selector(addMoreButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
@@ -48,11 +75,25 @@ class MainTimeLineViewController: BaseViewController {
     }
 
     private func setupUserInterface() {
-        view.addSubview(addMoreButton)
-        addMoreButton.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.size.equalTo(40)
+        view.addSubview(timeDashLine)
+        timeDashLine.snp.makeConstraints { make in
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalTo(2)
         }
+
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+
+        scrollView.addSubview(taskContainerView)
+        taskContainerView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(view).inset(16)
+            make.top.equalTo(scrollView)
+            make.bottom.equalTo(scrollView).priorityLow()
+            make.height.equalTo(0)
+        }
+        scrollView.contentInset = UIEdgeInsets(top: FishLayoutUtils.topMargin, left: 0, bottom: FishLayoutUtils.bottomPadding, right: 0)
 
         view.addSubview(searchButton)
         searchButton.snp.makeConstraints { make in
@@ -60,10 +101,10 @@ class MainTimeLineViewController: BaseViewController {
             make.size.equalTo(40)
         }
 
-        view.addSubview(timeDashLine)
-        timeDashLine.snp.makeConstraints { make in
-            make.centerX.top.bottom.equalToSuperview()
-            make.width.equalTo(4)
+        view.addSubview(addMoreButton)
+        addMoreButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(40)
         }
 
         view.addSubview(toolsBar)
@@ -81,7 +122,27 @@ class MainTimeLineViewController: BaseViewController {
     }
 
     @objc private func addMoreButtonPressed(_ sender: UIButton) {
-        hiddenNavigationBar = !hiddenNavigationBar
+        countTime += 1
+        let height = (CGFloat)(countTime) * (Constant.taskHeight + Constant.taskMargin) - Constant.taskMargin
+        let view = FishTimeLineTaskView(type: FishToolType(rawValue: (countTime - 1) % 4) ?? .diary)
+        taskContainerView.addArrangedSubview(view)
+        taskContainerView.snp.updateConstraints { make in
+            make.height.equalTo(height)
+        }
+    }
+
+    @objc private func clearData(_ sender: UIButton) {
+        for view in taskContainerView.arrangedSubviews {
+            taskContainerView.removeArrangedSubview(view)
+        }
+        countTime = 0
+        taskContainerView.snp.updateConstraints { make in
+            make.height.equalTo(0)
+        }
+    }
+
+    @objc private func taskItemPressed(_ sender: UIControl) {
+        FishPrint("press task")
     }
 }
 

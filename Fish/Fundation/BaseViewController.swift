@@ -38,10 +38,11 @@ class BaseViewController: UIViewController {
         return label
     }()
 
-    private lazy var leftButton: BaseButton = {
+    private lazy var returnButton: BaseButton = {
         let button = BaseButton()
         button.imageView?.contentMode = .center
         button.setImage(UIImage(named: "TTNavigationBarBack"), for: .normal)
+        button.addTarget(self, action: #selector(returnButtonPressed(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -60,6 +61,10 @@ class BaseViewController: UIViewController {
         setupNavigationBar()
     }
 
+    @objc public func returnButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+
     private func setupNavigationBar() {
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
@@ -74,8 +79,8 @@ class BaseViewController: UIViewController {
             make.height.equalTo(0.5)
         }
 
-        headerView.addSubview(leftButton)
-        leftButton.snp.makeConstraints { make in
+        headerView.addSubview(returnButton)
+        returnButton.snp.makeConstraints { make in
             make.centerX.equalTo(headerView.snp.leading).offset(24)
             make.width.height.equalTo(Metric.navigationBarHeight)
             make.centerY.equalTo(headerView)
@@ -91,7 +96,7 @@ class BaseViewController: UIViewController {
         headerView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.center.equalTo(headerView)
-            make.leading.greaterThanOrEqualTo(leftButton.snp.trailing).offset(10)
+            make.leading.greaterThanOrEqualTo(returnButton.snp.trailing).offset(10)
             make.trailing.lessThanOrEqualTo(rightButton.snp.leading).offset(-10)
         }
         rightButton.setContentCompressionResistancePriority(.required, for: .horizontal)

@@ -11,6 +11,15 @@ import UIKit
 
 class BaseButton: UIButton {
 
+    @objc open var hitOffset = UIEdgeInsets.zero
+
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        guard hitOffset != UIEdgeInsets.zero && isEnabled && !isHidden else {
+            return super.point(inside: point, with: event)
+        }
+        return bounds.inset(by: hitOffset).contains(point)
+    }
+
     private let highlightedAlpha: CGFloat = 0.7
 
     override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {

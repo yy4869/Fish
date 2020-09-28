@@ -26,6 +26,21 @@ enum FishToolType: Int, CaseIterable {
             return "日程"
         }
     }
+
+    func backGroundColor() -> UIColor {
+        var color: UIColor
+        switch self {
+        case .diary:
+            color = .UI_blueLinkColor
+        case .note:
+            color = .yellow
+        case .task:
+            color = .UI_orangeColor
+        case .schedule:
+            color = .green
+        }
+        return color.withAlphaComponent(0.4)
+    }
 }
 
 protocol FishToolBarStackViewDelegate: AnyObject {
@@ -53,7 +68,7 @@ class FishToolBarStackView: UIStackView {
     private func setupUI() {
         for type in FishToolType.allCases {
             let tool = BaseCornerRadiusButton()
-            tool.setBackgroundColor(.UI_greyLightColor, for: .normal)
+            tool.setBackgroundColor(type.backGroundColor(), for: .normal)
             tool.setTitle(type.desc(), for: .normal)
             tool.titleLabel?.font = .systemFont(ofSize: 13)
             tool.addTarget(self, action: #selector(toolBarPressed(_:)), for: .touchUpInside)
