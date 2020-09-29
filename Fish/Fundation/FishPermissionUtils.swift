@@ -9,6 +9,8 @@
 import Foundation
 import Photos
 
+public typealias TTPermissionCallback = () -> Void
+
 class FishPermissionUtils {
     static func requestTakePhotoPermission(succ: TTPermissionCallback?, fail: TTPermissionCallback? = nil) {
         if #available(iOS 8.0, *) {
@@ -29,7 +31,7 @@ class FishPermissionUtils {
                     }
                 }
                 if #available(iOS 14.0, *) {
-                    PHPhotoLibrary.requestAuthorization(for: .readWrite, handler: handler)
+//                    PHPhotoLibrary.requestAuthorization(for: .readWrite, handler: handler)
                 } else {
                     PHPhotoLibrary.requestAuthorization(handler)
                 }

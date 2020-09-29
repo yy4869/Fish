@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     
-    class func imageWithColor(_ color: UIColor, size: CGSize) -> UIImage? {
+    class func imageWithColor(_ color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage? {
         var realSize = size
         if realSize == CGSize.zero {
             realSize = CGSize(width: 1, height: 1)

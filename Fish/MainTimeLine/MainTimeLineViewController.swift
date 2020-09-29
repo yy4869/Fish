@@ -10,11 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-public typealias TTPermissionCallback = () -> Void
-
 class MainTimeLineViewController: BaseViewController {
-
-    private var countTime = 0
 
     struct Constant {
         static let taskHeight: CGFloat = 100
@@ -26,18 +22,12 @@ class MainTimeLineViewController: BaseViewController {
         return view
     }()
 
-    private lazy var scrollView: UIScrollView = {
-        let view = UIScrollView()
-        view.contentInsetAdjustmentBehavior = .never
-        return view
-    }()
-
-    private lazy var taskContainerView: UIStackView = {
-        let view = UIStackView()
-        view.axis = .vertical
-        view.distribution = .fillEqually
-        view.spacing = Constant.taskMargin
-        view.alignment = .fill
+    private lazy var tableView: UITableView = {
+        let view = UITableView()
+        view.delegate = self
+        view.dataSource = self
+        view.separatorStyle = .none
+        view.register(MainTimeLineTableCell.self, forCellReuseIdentifier: MainTimeLineTableCell.reuseIdentifier)
         return view
     }()
 
@@ -63,6 +53,11 @@ class MainTimeLineViewController: BaseViewController {
         return view
     }()
 
+    private lazy var dataController: MainTimeLineDataController = {
+        let dc = MainTimeLineDataController()
+        return dc
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNavigationBar = true
@@ -81,19 +76,10 @@ class MainTimeLineViewController: BaseViewController {
             make.width.equalTo(2)
         }
 
-        view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { make in
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
-
-        scrollView.addSubview(taskContainerView)
-        taskContainerView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view).inset(16)
-            make.top.equalTo(scrollView)
-            make.bottom.equalTo(scrollView).priorityLow()
-            make.height.equalTo(0)
-        }
-        scrollView.contentInset = UIEdgeInsets(top: FishLayoutUtils.topMargin, left: 0, bottom: FishLayoutUtils.bottomPadding, right: 0)
 
         view.addSubview(searchButton)
         searchButton.snp.makeConstraints { make in
@@ -115,39 +101,57 @@ class MainTimeLineViewController: BaseViewController {
         }
     }
 
+    private func setupData() {
+        tableView.reloadData()
+    }
+
     private func showLoginView() {
         let vc = LoginViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: nil)
     }
+}
 
-    @objc private func addMoreButtonPressed(_ sender: UIButton) {
-        countTime += 1
-        let height = (CGFloat)(countTime) * (Constant.taskHeight + Constant.taskMargin) - Constant.taskMargin
-        let view = FishTimeLineTaskView(type: FishToolType(rawValue: (countTime - 1) % 4) ?? .diary)
-        taskContainerView.addArrangedSubview(view)
-        taskContainerView.snp.updateConstraints { make in
-            make.height.equalTo(height)
-        }
-    }
-
+// MARK: Button
+extension MainTimeLineViewController {
     @objc private func clearData(_ sender: UIButton) {
-        for view in taskContainerView.arrangedSubviews {
-            taskContainerView.removeArrangedSubview(view)
-        }
-        countTime = 0
-        taskContainerView.snp.updateConstraints { make in
-            make.height.equalTo(0)
-        }
+        dataController.clearTasks()
+        tableView.reloadData()
     }
 
-    @objc private func taskItemPressed(_ sender: UIControl) {
-        FishPrint("press task")
+    @objc private func addMoreButtonPressed(_ sender: UIControl) {
+        dataController.addTask()
+        tableView.reloadData()
     }
 }
 
 extension MainTimeLineViewController: FishToolBarStackViewDelegate {
     func toolBarStackView(_ view: FishToolBarStackView, didPressButton type: FishToolType) {
-        FishPrint("press \(type.desc())")
+        dataController.updateSelectType(type: type)
+        tableView.reloadData()
+    }
+}
+
+extension MainTimeLineViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataController.taskCount > 0 ? 1 : 0
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataController.taskCount
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTimeLineTableCell.reuseIdentifier, for: indexPath) as? MainTimeLineTableCell else {
+            return UITableViewCell()
+        }
+        cell.bind(model: dataController.tasks[indexPath.row])
+        return cell
+    }
+}
+
+extension MainTimeLineViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        FishPrint("didSelectRowAt \(indexPath.row)")
     }
 }

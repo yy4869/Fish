@@ -8,7 +8,8 @@
 
 import UIKit
 
-enum FishToolType: Int, CaseIterable {
+enum FishToolType: Int, CaseIterable, Codable {
+    case none
     case diary
     case note
     case task
@@ -24,6 +25,8 @@ enum FishToolType: Int, CaseIterable {
             return "待办"
         case .schedule:
             return "日程"
+        case .none:
+            return ""
         }
     }
 
@@ -38,6 +41,8 @@ enum FishToolType: Int, CaseIterable {
             color = .UI_orangeColor
         case .schedule:
             color = .green
+        case .none:
+            color = .red
         }
         return color.withAlphaComponent(0.4)
     }
@@ -67,6 +72,7 @@ class FishToolBarStackView: UIStackView {
 
     private func setupUI() {
         for type in FishToolType.allCases {
+            if type == .none { continue }
             let tool = BaseCornerRadiusButton()
             tool.setBackgroundColor(type.backGroundColor(), for: .normal)
             tool.setTitle(type.desc(), for: .normal)

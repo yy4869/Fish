@@ -12,7 +12,7 @@ extension UIButton {
     
     @objc func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         if let color = color {
-            let image = UIImage.imageWithColor(color, size: CGSize(width: 1, height: 1))
+            let image = UIImage.imageWithColor(color)
             self.setBackgroundImage(image, for: state)
         } else {
             self.setBackgroundImage(nil, for: state)
