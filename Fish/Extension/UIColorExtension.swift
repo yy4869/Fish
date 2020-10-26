@@ -53,4 +53,15 @@ extension UIColor {
     static let UI_blueLinkColor = UIColor(rgbValue: 0x5775A8)
     /// 亮蓝色 6991FF
     static let UI_blueLightColor = UIColor(rgbValue: 0x6991FF)
+
+    // 按钮灰
+    static let UI_greyButtonColor = UIColor(rgbValue: 0xC2C6BE)
+    // 日程红
+    static let UI_scheduleColor = UIColor(rgbValue: 0xCF7866)
+    // 日记蓝
+    static let UI_diaryColor = UIColor(rgbValue: 0x7E94A8)
+    // 笔记黄
+    static let UI_noteColor = UIColor(rgbValue: 0xF9C742)
+    // 待办绿
+    static let UI_taskColor = UIColor(rgbValue: 0xC8CD87)
 }

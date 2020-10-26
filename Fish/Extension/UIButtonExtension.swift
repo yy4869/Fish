@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIButton {
-    
     @objc func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         if let color = color {
             let image = UIImage.imageWithColor(color)
