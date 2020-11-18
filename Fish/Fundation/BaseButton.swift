@@ -32,29 +32,29 @@ class BaseButton: UIButton {
 
     override func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         super.setTitleColor(color, for: state)
-        if state == .normal {
-            setTitleColor(color?.withAlphaComponent(highlightedAlpha), for: .highlighted)
+        if state == .normal || state == .selected {
+            setTitleColor(color?.withAlphaComponent(highlightedAlpha), for: [state, .highlighted])
         }
     }
 
     override func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
         super.setBackgroundColor(color, for: state)
-        if state == .normal {
-            setBackgroundColor(color?.withAlphaComponent(highlightedAlpha), for: .highlighted)
+        if state == .normal || state == .selected {
+            setBackgroundColor(color?.withAlphaComponent(highlightedAlpha), for: [state, .highlighted])
         }
     }
 
     override func setImage(_ image: UIImage?, for state: UIControl.State) {
         super.setImage(image, for: state)
-        if state == .normal {
-            super.setImage(image?.alpha(highlightedAlpha), for: .highlighted)
+        if state == .normal || state == .selected {
+            super.setImage(image?.alpha(highlightedAlpha), for: [state, .highlighted])
         }
     }
 
     override func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) {
         super.setBackgroundImage(image, for: state)
-        if state == .normal {
-            super.setBackgroundImage(image?.alpha(highlightedAlpha), for: .highlighted)
+        if state == .normal || state == .selected {
+            super.setBackgroundImage(image?.alpha(highlightedAlpha), for: [state, .highlighted])
         }
     }
 

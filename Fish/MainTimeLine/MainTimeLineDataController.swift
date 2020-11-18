@@ -11,20 +11,30 @@ import RxSwift
 import RxCocoa
 
 class MainTimeLineDataController: NSObject {
-    var taskCount: Int {
-        tasks.count
+    private var currentType: FishToolType = .none
+    private var allTasks: [TimeLimeTaskModel] = []
+    private var taskCount: Int {
+        allTasks.count
     }
 
-    private(set) var selectType: FishToolType = .none
+    var currentTaskCount: Int {
+        currentTasks.count
+    }
 
-    var tasks: [TimeLimeTaskModel] {
-        if selectType == .none {
+    var currentTasks: [TimeLimeTaskModel] {
+        if currentType == .none {
             return allTasks
         }
-        return allTasks.filter { $0.type == selectType }
+        return allTasks.filter { $0.type == currentType }
     }
-    var allTasks: [TimeLimeTaskModel] = []
+}
 
+extension MainTimeLineDataController {
+    func updateSelectType(type: FishToolType) {
+        currentType = type
+    }
+
+    // TODO: debug
     func addTask() {
         let task = TimeLimeTaskModel(type: FishToolType(rawValue: taskCount % 4) ?? .diary, title: "\(taskCount)")
         allTasks.append(task)
@@ -32,9 +42,5 @@ class MainTimeLineDataController: NSObject {
 
     func clearTasks() {
         allTasks.removeAll()
-    }
-
-    func updateSelectType(type: FishToolType) {
-        selectType = selectType == type ? .none : type
     }
 }

@@ -49,15 +49,15 @@ enum FishToolType: Int, CaseIterable, Codable {
 }
 
 protocol FishToolBarStackViewDelegate: AnyObject {
-    func toolBarStackView(_ view: FishToolBarStackView, didPressButton type: FishToolType)
+    func toolBarStackView(_ view: FishToolBarStackView, didSelectType type: FishToolType)
 }
 
 class FishToolBarStackView: UIStackView {
 
     weak var delegate: FishToolBarStackViewDelegate?
-    var selectedType: FishToolType? {
+    private var selectedType: FishToolType = .none {
         didSet {
-
+            delegate?.toolBarStackView(self, didSelectType: selectedType)
         }
     }
 
@@ -78,55 +78,30 @@ class FishToolBarStackView: UIStackView {
     private func setupUI() {
         for type in FishToolType.allCases {
             if type == .none { continue }
-            let tool = FishToolButton(highlightedAlpha: 0.7)
-//            tool.setBackgroundColor(.UI_greyButtonColor, for: [.normal, .highlighted])
-            tool.setBackgroundColor(.UI_greyButtonColor, for: [.normal])
-//            tool.setBackgroundColor(type.backGroundColor(), for: [.highlighted])
-            tool.setBackgroundColor(type.backGroundColor(), for: [.selected])
-            tool.adjustsImageWhenHighlighted = false
+            let tool = BaseCornerRadiusButton(highlightedAlpha: 0.7)
             tool.setTitle(type.desc(), for: .normal)
             tool.setTitleColor(.white, for: .normal)
             tool.titleLabel?.font = .systemFont(ofSize: 13)
-            tool.addTarget(self, action: #selector(toolBarPressed(_:)), for: .touchDown)
+            tool.setBackgroundColor(.UI_greyButtonColor, for: .normal)
+            tool.setBackgroundColor(type.backGroundColor(), for: .selected)
+            tool.addTarget(self, action: #selector(toolBarPressed(_:)), for: .touchUpInside)
+
             tool.tag = type.rawValue
             addArrangedSubview(tool)
         }
     }
 
     @objc private func toolBarPressed(_ button: UIButton) {
-//        let pressedType = FishToolType(rawValue: button.tag) ?? .none
-//        guard let button = arrangedSubviews[button.tag] as? BaseCornerRadiusButton else { return }
-//
-//        if let selectedType = selectedType {
-//            if selectedType == pressedType {
-//                button.setBackgroundColor(.UI_greyButtonColor, for: .normal)
-//            } else {
-//                button.setBackgroundColor(pressedType.backGroundColor(), for: .normal)
-//                // 之前
-//            }
-//        } else {
-//            selectedType = pressedType
-//            button.setBackgroundColor(pressedType.backGroundColor(), for: .normal)
-//        }
-////        selectedType = FishToolType(rawValue: button.tag) ?? .none
-        button.isSelected = !button.isSelected
-        delegate?.toolBarStackView(self, didPressButton: FishToolType(rawValue: button.tag) ?? .none)
-    }
-}
-
-class FishToolButton: BaseCornerRadiusButton {
-//    override func setBackgroundColor(_ color: UIColor?, for state: UIControl.State) {
-//        super.setBackgroundColor(color, for: state)
-//        if state == .normal || state == .selected {
-//            setBackgroundColor(color?.withAlphaComponent(0.7), for: .highlighted)
-//        }
-//    }
-    override var isHighlighted: Bool {
-        didSet {
-            print(backgroundColor)
-            self.backgroundImage(for: .normal)
-            setBackgroundColor(backgroundColor?.withAlphaComponent(0.7), for: .highlighted)
+        let pressedType = FishToolType(rawValue: button.tag) ?? .none
+        guard let buttons = arrangedSubviews as? [BaseCornerRadiusButton] else { return }
+        for btn in buttons {
+            btn.isSelected = false
+        }
+        if pressedType == selectedType {
+            selectedType = .none
+        } else {
+            selectedType = pressedType
+            button.isSelected = true
         }
     }
-
 }

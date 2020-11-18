@@ -126,7 +126,7 @@ extension MainTimeLineViewController {
 }
 
 extension MainTimeLineViewController: FishToolBarStackViewDelegate {
-    func toolBarStackView(_ view: FishToolBarStackView, didPressButton type: FishToolType) {
+    func toolBarStackView(_ view: FishToolBarStackView, didSelectType type: FishToolType) {
         dataController.updateSelectType(type: type)
         tableView.reloadData()
     }
@@ -134,18 +134,18 @@ extension MainTimeLineViewController: FishToolBarStackViewDelegate {
 
 extension MainTimeLineViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataController.taskCount > 0 ? 1 : 0
+        return dataController.currentTaskCount > 0 ? 1 : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataController.taskCount
+        return dataController.currentTaskCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainTimeLineTableCell.reuseIdentifier, for: indexPath) as? MainTimeLineTableCell else {
             return UITableViewCell()
         }
-        cell.bind(model: dataController.tasks[indexPath.row])
+        cell.bind(model: dataController.currentTasks[indexPath.row])
         return cell
     }
 }
