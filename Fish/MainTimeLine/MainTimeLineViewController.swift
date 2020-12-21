@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import SwiftUI
 
 class MainTimeLineViewController: BaseViewController {
 
@@ -58,6 +59,14 @@ class MainTimeLineViewController: BaseViewController {
         return dc
     }()
 
+    private lazy var debugButton: BaseCornerRadiusButton = {
+        let button = BaseCornerRadiusButton()
+        button.setBackgroundColor(.UI_greyLightColor, for: .normal)
+        button.setTitle("🐞", for: .normal)
+        button.addTarget(self, action: #selector(debugButtonPressed(_:)), for: .touchUpInside)
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hiddenNavigationBar = true
@@ -93,6 +102,13 @@ class MainTimeLineViewController: BaseViewController {
             make.size.equalTo(40)
         }
 
+        view.addSubview(debugButton)
+        debugButton.snp.makeConstraints { make in
+            make.trailing.equalTo(headerView).offset(-16)
+            make.top.equalTo(headerView).offset(16)
+            make.size.equalTo(40)
+        }
+
         view.addSubview(toolsBar)
         toolsBar.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(Metric.horizonMargin)
@@ -123,6 +139,13 @@ extension MainTimeLineViewController {
         dataController.addTask()
         tableView.reloadData()
     }
+
+    @objc private func debugButtonPressed(_ sender: UIControl) {
+//        let vc = RxExerciseViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+        let vc = UIHostingController(rootView: RxExerciseSwiftUIView())
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension MainTimeLineViewController: FishToolBarStackViewDelegate {
@@ -152,6 +175,7 @@ extension MainTimeLineViewController: UITableViewDataSource {
 
 extension MainTimeLineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        FishPrint("didSelectRowAt \(indexPath.row)")
+        tableView.deselectRow(at: indexPath, animated: false)
+        present(MyCardViewController(), animated: true, completion: nil)
     }
 }

@@ -19,16 +19,22 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
+  - SCRAttributedStringBuilder (1.1.4):
+    - SCRAttributedStringBuilder/All (= 1.1.4)
+  - SCRAttributedStringBuilder/All (1.1.4):
+    - SCRAttributedStringBuilder/OC
+    - SCRAttributedStringBuilder/Swift
+  - SCRAttributedStringBuilder/OC (1.1.4)
+  - SCRAttributedStringBuilder/Swift (1.1.4)
   - SnapKit (4.0.1)
-  - VersaPlayer (3.0.2)
 
 DEPENDENCIES:
   - CardParts (from `../CardParts`)
   - Reveal-SDK (~> 4.0)
   - RxCocoa (= 5.1.0)
   - RxSwift (= 5.1.0)
+  - SCRAttributedStringBuilder (~> 1.0)
   - SnapKit (~> 4.0.0)
-  - VersaPlayer
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
@@ -39,8 +45,8 @@ SPEC REPOS:
     - RxGesture
     - RxRelay
     - RxSwift
+    - SCRAttributedStringBuilder
     - SnapKit
-    - VersaPlayer
 
 EXTERNAL SOURCES:
   CardParts:
@@ -55,9 +61,9 @@ SPEC CHECKSUMS:
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SCRAttributedStringBuilder: 63c0bc0acc4197dc4bab688e12646e109324dcb3
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: 2dbce12c3f085ed3330d6268b1bdc05e53b99124
+PODFILE CHECKSUM: 2c05a12084354346b620aafab09655bcf5289c29
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

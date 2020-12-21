@@ -62,7 +62,16 @@ class BaseViewController: UIViewController {
     }
 
     @objc public func returnButtonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        let array = navigationController?.viewControllers
+        if array?.count ?? 0 > 0 {
+            if self == array?.first {
+                presentingViewController?.dismiss(animated: true, completion: nil)
+            } else {
+                navigationController?.popViewController(animated: true)
+            }
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
     private func setupNavigationBar() {
