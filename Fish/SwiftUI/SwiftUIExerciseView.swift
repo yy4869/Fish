@@ -10,7 +10,7 @@ import SwiftUI
 import WebKit
 import Foundation
 
-struct RxExerciseSwiftUIView : View {
+struct SwiftUIExerciseView : View {
 
     @State private var languages = ["11", "22", "33"]
     @State private var selectedLanguage = 0
@@ -81,9 +81,9 @@ struct MyButtonStyle: ViewModifier {
     }
 }
 
-struct RxExerciseSwiftUIView_Previews: PreviewProvider {
+struct SwiftUIExerciseView_Previews: PreviewProvider {
     static var previews: some View {
-        RxExerciseSwiftUIView()
+        SwiftUIExerciseView()
     }
 }
 

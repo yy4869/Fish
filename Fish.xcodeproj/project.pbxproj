@@ -15,13 +15,14 @@
 		2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5524FFFABA0068DA1B /* ToastView.swift */; };
 		2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */; };
 		2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC602578FB8B00776710 /* UIFontExtension.swift */; };
-		2E8496C72588638500D8B7C5 /* RxExerciseSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* RxExerciseSwiftUIView.swift */; };
+		2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */; };
 		2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */; };
 		2E9920802521F2F800196FEF /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207F2521F2F800196FEF /* BaseControl.swift */; };
 		2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */; };
 		2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F5251C896F00F192E8 /* FishUtils.swift */; };
 		2E9C30F8251CA60100F192E8 /* DashLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F7251CA60100F192E8 /* DashLine.swift */; };
 		2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F9251CA63F00F192E8 /* UIViewExtension.swift */; };
+		2E9DD1F02590A432004CD826 /* SwiftUIObjectBindingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9DD1EF2590A432004CD826 /* SwiftUIObjectBindingView.swift */; };
 		2EA830F7250F73C000E59759 /* SpringInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */; };
 		2EA830FA250F746600E59759 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F9250F746600E59759 /* GradientView.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
@@ -56,13 +57,14 @@
 		2E5BEB5524FFFABA0068DA1B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExerciseViewController.swift; sourceTree = "<group>"; };
 		2E74EC602578FB8B00776710 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		2E8496C62588638500D8B7C5 /* RxExerciseSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExerciseSwiftUIView.swift; sourceTree = "<group>"; };
+		2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExerciseView.swift; sourceTree = "<group>"; };
 		2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishPermissionUtils.swift; sourceTree = "<group>"; };
 		2E99207F2521F2F800196FEF /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
 		2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishToolBarStackView.swift; sourceTree = "<group>"; };
 		2E9C30F5251C896F00F192E8 /* FishUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishUtils.swift; sourceTree = "<group>"; };
 		2E9C30F7251CA60100F192E8 /* DashLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashLine.swift; sourceTree = "<group>"; };
 		2E9C30F9251CA63F00F192E8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		2E9DD1EF2590A432004CD826 /* SwiftUIObjectBindingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIObjectBindingView.swift; sourceTree = "<group>"; };
 		2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringInterfaceViewController.swift; sourceTree = "<group>"; };
 		2EA830F9250F746600E59759 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
@@ -124,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */,
-				2E8496C62588638500D8B7C5 /* RxExerciseSwiftUIView.swift */,
 			);
 			path = RxExercise;
 			sourceTree = "<group>";
@@ -136,6 +137,15 @@
 				2E17B09E25233635004904FC /* MainTimeLineTableCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E9DD1EE2590A400004CD826 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */,
+				2E9DD1EF2590A432004CD826 /* SwiftUIObjectBindingView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		2EA830F5250F738800E59759 /* Animation */ = {
@@ -216,6 +226,7 @@
 		2EFEF92624F657C100524436 /* Fish */ = {
 			isa = PBXGroup;
 			children = (
+				2E9DD1EE2590A400004CD826 /* SwiftUI */,
 				2E74EC442578DF6900776710 /* RxExercise */,
 				2EE8FAD32566187000CFF86B /* ViewController */,
 				2EF842A2251B58D3009F2656 /* MainTimeLine */,
@@ -420,9 +431,10 @@
 				2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */,
 				2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */,
 				2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */,
-				2E8496C72588638500D8B7C5 /* RxExerciseSwiftUIView.swift in Sources */,
+				2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */,
 				2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */,
 				2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */,
+				2E9DD1F02590A432004CD826 /* SwiftUIObjectBindingView.swift in Sources */,
 				2EFEF93E24F7A7BE00524436 /* ValidationResult.swift in Sources */,
 				2E9920802521F2F800196FEF /* BaseControl.swift in Sources */,
 				2E0E129A2589C1E5006D5E6D /* FishNetworkUtils.swift in Sources */,

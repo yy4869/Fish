@@ -143,7 +143,7 @@ extension MainTimeLineViewController {
     @objc private func debugButtonPressed(_ sender: UIControl) {
 //        let vc = RxExerciseViewController()
 //        navigationController?.pushViewController(vc, animated: true)
-        let vc = UIHostingController(rootView: RxExerciseSwiftUIView())
+        let vc = UIHostingController(rootView: SwiftUIExerciseView())
         present(vc, animated: true, completion: nil)
     }
 }
