@@ -8,57 +8,88 @@
 
 import SwiftUI
 
-class UserModel: ObservableObject {
-    @Published var name: String = ""
-}
-
 struct SwiftUIObjectBindingView: View {
-    @State private var name: String = ""
-    @State var isPresented = false
-//    @ObservedObject var model = UserModel()
-    @EnvironmentObject var model: UserModel
 
-    var alert: Alert {
-        Alert(title: Text("Your name"), message: Text(model.name), dismissButton: .cancel())
-    }
+    let icon = Image(systemName: "book.fill")
+    let title = Text("Interactive Tutorials")
+    let flag = Image(systemName: "icloud.and.arrow.down")
+
+    @State var isPresent = false
+    private var randomBool = Bool.random()
 
     var body: some View {
+//        if randomBool {
+//            // AnyView 可以忽略具体的View的类型，这样返回的就是同一类型，相当于骗过编译器
+//            return AnyView(Image(systemName: "star.fill").font(.system(size: 72)))
+//        } else {
+//            return AnyView(Text("Sorry, you miss the gift.").font(.system(size: 32)))
+//        }
         NavigationView {
             VStack {
-                TextField("Your name", text: $model.name).padding()
-    //            Button("show", action: {
-    //                self.isPresented = true
-    //            }).alert(isPresented: $isPresented, content: {
-    //                alert
-    //            })
-//                NavigationLink(destination: SwiftUISubView()) {
-//                    Text("Show Detail")
-//                }
-                Button("Show modal view") {
-                    isPresented = true
-                }.sheet(isPresented: $isPresented, content: {
-                    modalView
-                })
+                Text("SwiftUI's NavigationView")
+                    .navigationBarTitle(Text("SwiftUI"))
+                    .navigationBarItems(leading: Button(action: {
+                        print("leading button pressed")
+                    }, label: {
+                        Text("Button1")
+                    }), trailing: TrailingButtons())
+                    .padding()
+
+                // navigationBarTitle 按顺序来，前面设置过了，后面就不生效了
+                Text("hehe").navigationBarTitle(Text("11"))
+
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 40) {
+                    Image("logo").modifier(myImageStyle())
+                }
             }
         }
     }
+}
 
-    var modalView: some View {
-        Text("The modal view")
+struct myImageStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(Circle().fill(Color.yellow))
+            .clipped()
+            .overlay(Circle().stroke(Color.blue, lineWidth: 5))
+            .saturation(0)
+    }
+
+}
+
+
+struct TrailingButtons: View {
+    var body: some View {
+        HStack {
+            Button(action: {
+                print("trailing button pressed 1")
+            }, label: {
+                Image(systemName: "icloud.and.arrow.down.fill")
+            })
+
+            Button(action: {
+                print("trailing button pressed 2")
+            }, label: {
+                Image(systemName: "pencil.tip.crop.circle")
+            })
+        }
     }
 }
 
 struct SwiftUIObjectBindingView_Previews: PreviewProvider {
     static var previews: some View {
-        return SwiftUIObjectBindingView().environmentObject(UserModel())
+        SwiftUIObjectBindingView()
     }
 }
 
-struct SwiftUISubView: View {
-    // EnvironmentObject 好用是好用，但是需要在子试图里重新写一个变量，这就有可能造成命名不统一的问题，肉眼可见有坑
-    @EnvironmentObject var model: UserModel
-
+struct DetailView: View {
     var body: some View {
-        Text("name: \(model.name)")
+        Text("Detail")
+            .onAppear {
+                print("view on appear")
+            }
+            .onDisappear {
+                print("view on disappear")
+            }
     }
 }
