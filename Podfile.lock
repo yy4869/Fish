@@ -27,6 +27,7 @@ PODS:
   - SCRAttributedStringBuilder/OC (1.1.4)
   - SCRAttributedStringBuilder/Swift (1.1.4)
   - SnapKit (4.0.1)
+  - Tatami (0.3.2)
 
 DEPENDENCIES:
   - CardParts (from `../CardParts`)
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - RxSwift (= 5.1.0)
   - SCRAttributedStringBuilder (~> 1.0)
   - SnapKit (~> 4.0.0)
+  - Tatami (from `../../ios-module-Tatami`)
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
@@ -51,6 +53,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CardParts:
     :path: "../CardParts"
+  Tatami:
+    :path: "../../ios-module-Tatami"
 
 SPEC CHECKSUMS:
   CardParts: 9d54b5fae9534dac0f8f9ddf3f78132a9b3de3a0
@@ -63,7 +67,8 @@ SPEC CHECKSUMS:
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SCRAttributedStringBuilder: 63c0bc0acc4197dc4bab688e12646e109324dcb3
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  Tatami: 5b319f5c954a550edbcd66ac6734a197efedf2b6
 
-PODFILE CHECKSUM: 2c05a12084354346b620aafab09655bcf5289c29
+PODFILE CHECKSUM: 2c3376183edff7147288f1f7603d9b77e7cc2458
 
 COCOAPODS: 1.10.0

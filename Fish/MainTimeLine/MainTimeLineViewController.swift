@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import AVFoundation
-import SwiftUI
 
 class MainTimeLineViewController: BaseViewController {
 
@@ -179,3 +178,21 @@ extension MainTimeLineViewController: UITableViewDelegate {
         present(MyCardViewController(), animated: true, completion: nil)
     }
 }
+
+#if DEBUG
+
+import SwiftUI
+
+@available(iOS 13, *)
+struct MainTimeLineVCPreview: PreviewProvider {
+    static var devices = ["iPhone 11 Pro", "iPhone SE (1st generation)"]
+
+    static var previews: some View {
+        ForEach(devices, id: \.self) { deviceName in
+            MainTimeLineViewController().toPreview().previewDevice(PreviewDevice(rawValue: deviceName))
+            .previewDisplayName(deviceName)
+        }
+    }
+}
+
+#endif

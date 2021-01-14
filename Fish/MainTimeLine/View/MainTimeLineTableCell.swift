@@ -107,3 +107,14 @@ class MainTimeLineTableCell: UITableViewCell {
 //        }
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13.0, *)
+struct MainTimeLineTableCellPreview: PreviewProvider {
+    static var previews: some View {
+        MainTimeLineTableCell().toPreview()
+    }
+}
+#endif

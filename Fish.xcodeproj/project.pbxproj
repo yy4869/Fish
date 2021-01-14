@@ -16,6 +16,8 @@
 		2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */; };
 		2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC602578FB8B00776710 /* UIFontExtension.swift */; };
 		2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */; };
+		2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */; };
+		2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87847F25B0574700A1F623 /* UIView+Preview.swift */; };
 		2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */; };
 		2E9920802521F2F800196FEF /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207F2521F2F800196FEF /* BaseControl.swift */; };
 		2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */; };
@@ -58,6 +60,8 @@
 		2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExerciseViewController.swift; sourceTree = "<group>"; };
 		2E74EC602578FB8B00776710 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExerciseView.swift; sourceTree = "<group>"; };
+		2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		2E87847F25B0574700A1F623 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishPermissionUtils.swift; sourceTree = "<group>"; };
 		2E99207F2521F2F800196FEF /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
 		2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishToolBarStackView.swift; sourceTree = "<group>"; };
@@ -256,11 +260,13 @@
 		2EFEF94724F7B09C00524436 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */,
 				2EFEF94824F7B18100524436 /* UIColorExtension.swift */,
 				2EFEF94A24F7B97000524436 /* UIImageExtension.swift */,
 				2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */,
 				2E9C30F9251CA63F00F192E8 /* UIViewExtension.swift */,
 				2E74EC602578FB8B00776710 /* UIFontExtension.swift */,
+				2E87847F25B0574700A1F623 /* UIView+Preview.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -433,7 +439,9 @@
 				2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */,
 				2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */,
 				2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */,
+				2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */,
 				2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */,
+				2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */,
 				2E9DD1F02590A432004CD826 /* SwiftUIObjectBindingView.swift in Sources */,
 				2EFEF93E24F7A7BE00524436 /* ValidationResult.swift in Sources */,
 				2E9920802521F2F800196FEF /* BaseControl.swift in Sources */,

@@ -105,3 +105,22 @@ class FishToolBarStackView: UIStackView {
         }
     }
 }
+
+#if DEBUG
+import SwiftUI
+
+struct FishToolBarStackViewRepresentable: UIViewRepresentable {
+    func updateUIView(_ uiView: UIViewType, context: Context) {}
+
+    func makeUIView(context: Context) -> some UIView {
+        FishToolBarStackView()
+    }
+}
+
+@available(iOS 13.0, *)
+struct FishToolBarStackViewPreview: PreviewProvider {
+    static var previews: some View {
+        FishToolBarStackViewRepresentable()
+    }
+}
+#endif
