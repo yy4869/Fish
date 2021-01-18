@@ -175,7 +175,8 @@ extension MainTimeLineViewController: UITableViewDataSource {
 extension MainTimeLineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        present(MyCardViewController(), animated: true, completion: nil)
+//        present(MyCardViewController(), animated: true, completion: nil)
+        present(SFGBaseViewController(), animated: true, completion: nil)
     }
 }
 
@@ -189,7 +190,7 @@ struct MainTimeLineVCPreview: PreviewProvider {
 
     static var previews: some View {
         ForEach(devices, id: \.self) { deviceName in
-            MainTimeLineViewController().toPreview().previewDevice(PreviewDevice(rawValue: deviceName))
+            SFGBaseViewController().toPreview().previewDevice(PreviewDevice(rawValue: deviceName))
             .previewDisplayName(deviceName)
         }
     }

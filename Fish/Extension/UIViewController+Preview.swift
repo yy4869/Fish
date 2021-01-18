@@ -19,7 +19,7 @@ extension UIViewController {
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
         
         func makeUIViewController(context: Context) -> UIViewController {
-            return viewController
+            viewController
         }
     }
 
