@@ -23,11 +23,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (self.updateJumboIfNeeded) {
-        self.updateJumboIfNeeded();
-    }
 }
 
-- (void)scrollToTop {}
 
 @end

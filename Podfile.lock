@@ -5,7 +5,9 @@ PODS:
     - RxGesture (~> 3.0)
     - RxSwift (~> 5.0)
   - Differentiator (4.0.1)
-  - Reveal-SDK (4)
+  - FBRetainCycleDetector (0.1.4)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
   - RxCocoa (5.1.0):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -28,20 +30,24 @@ PODS:
   - SCRAttributedStringBuilder/Swift (1.1.4)
   - SnapKit (4.0.1)
   - Tatami (0.3.2)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - CardParts (from `../CardParts`)
-  - Reveal-SDK (~> 4.0)
+  - FBRetainCycleDetector
+  - MLeaksFinder
   - RxCocoa (= 5.1.0)
   - RxSwift (= 5.1.0)
   - SCRAttributedStringBuilder (~> 1.0)
   - SnapKit (~> 4.0.0)
   - Tatami (from `../../ios-module-Tatami`)
+  - YYText (= 1.0.7)
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
     - Differentiator
-    - Reveal-SDK
+    - FBRetainCycleDetector
+    - MLeaksFinder
     - RxCocoa
     - RxDataSources
     - RxGesture
@@ -49,6 +55,7 @@ SPEC REPOS:
     - RxSwift
     - SCRAttributedStringBuilder
     - SnapKit
+    - YYText
 
 EXTERNAL SOURCES:
   CardParts:
@@ -59,7 +66,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CardParts: 9d54b5fae9534dac0f8f9ddf3f78132a9b3de3a0
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
   RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
@@ -68,7 +76,8 @@ SPEC CHECKSUMS:
   SCRAttributedStringBuilder: 63c0bc0acc4197dc4bab688e12646e109324dcb3
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Tatami: 5b319f5c954a550edbcd66ac6734a197efedf2b6
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 2c3376183edff7147288f1f7603d9b77e7cc2458
+PODFILE CHECKSUM: 93b3116aa0744954cc21e780657fbd9b2f7377ff
 
 COCOAPODS: 1.10.0

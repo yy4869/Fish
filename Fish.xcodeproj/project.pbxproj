@@ -28,6 +28,10 @@
 		2EA5DC7225B580BC00741FB6 /* SFGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5DC7025B580BC00741FB6 /* SFGBaseViewController.m */; };
 		2EA830F7250F73C000E59759 /* SpringInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */; };
 		2EA830FA250F746600E59759 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA830F9250F746600E59759 /* GradientView.swift */; };
+		2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */; };
+		2EAA6D4225C0007A00817867 /* UITableView+YFDDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D3F25C0007A00817867 /* UITableView+YFDDevLog.m */; };
+		2EAA6D6125C0064400817867 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6025C0064400817867 /* TestViewController.swift */; };
+		2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6325C0142600817867 /* SecondViewController.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
 		2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAD42566189400CFF86B /* MyCardViewController.swift */; };
 		2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF500752523191200C1C05C /* MainTimeLineDataController.swift */; };
@@ -75,6 +79,12 @@
 		2EA5DC7125B580BC00741FB6 /* SFGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFGBaseViewController.h; sourceTree = "<group>"; };
 		2EA830F6250F73C000E59759 /* SpringInterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringInterfaceViewController.swift; sourceTree = "<group>"; };
 		2EA830F9250F746600E59759 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YFDDevLog.m"; sourceTree = "<group>"; };
+		2EAA6D3E25C0007900817867 /* NSObject+YFDDevLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YFDDevLog.h"; sourceTree = "<group>"; };
+		2EAA6D3F25C0007A00817867 /* UITableView+YFDDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YFDDevLog.m"; sourceTree = "<group>"; };
+		2EAA6D4025C0007A00817867 /* UITableView+YFDDevLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YFDDevLog.h"; sourceTree = "<group>"; };
+		2EAA6D6025C0064400817867 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2EAA6D6325C0142600817867 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
 		2EE8FAD42566189400CFF86B /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		2EF500752523191200C1C05C /* MainTimeLineDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineDataController.swift; sourceTree = "<group>"; };
@@ -180,6 +190,8 @@
 				2EA5DC7125B580BC00741FB6 /* SFGBaseViewController.h */,
 				2EA5DC7025B580BC00741FB6 /* SFGBaseViewController.m */,
 				2EA5DC6F25B580BB00741FB6 /* Fish-Bridging-Header.h */,
+				2EAA6D6025C0064400817867 /* TestViewController.swift */,
+				2EAA6D6325C0142600817867 /* SecondViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +279,10 @@
 		2EFEF94724F7B09C00524436 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2EAA6D3E25C0007900817867 /* NSObject+YFDDevLog.h */,
+				2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */,
+				2EAA6D4025C0007A00817867 /* UITableView+YFDDevLog.h */,
+				2EAA6D3F25C0007A00817867 /* UITableView+YFDDevLog.m */,
 				2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */,
 				2EFEF94824F7B18100524436 /* UIColorExtension.swift */,
 				2EFEF94A24F7B97000524436 /* UIImageExtension.swift */,
@@ -435,7 +451,10 @@
 				2EA830F7250F73C000E59759 /* SpringInterfaceViewController.swift in Sources */,
 				2E9C30F8251CA60100F192E8 /* DashLine.swift in Sources */,
 				2EA5DC7225B580BC00741FB6 /* SFGBaseViewController.m in Sources */,
+				2EAA6D6125C0064400817867 /* TestViewController.swift in Sources */,
+				2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */,
 				2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */,
+				2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */,
 				2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */,
 				2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */,
 				2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */,
@@ -445,6 +464,7 @@
 				2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */,
 				2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */,
 				2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */,
+				2EAA6D4225C0007A00817867 /* UITableView+YFDDevLog.m in Sources */,
 				2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */,
 				2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */,
 				2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */,

@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             // 方法一：旧 UINavigationController
-            let rootVC = MainTimeLineViewController()
+//            let rootVC = MainTimeLineViewController()
+            let rootVC = TestViewController()
             let navigation = UINavigationController(rootViewController: rootVC)
             window.rootViewController = navigation
 

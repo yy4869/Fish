@@ -11,7 +11,6 @@ import UIKit
 import AVFoundation
 
 class MainTimeLineViewController: BaseViewController {
-
     struct Constant {
         static let taskHeight: CGFloat = 100
         static let taskMargin: CGFloat = 32
@@ -66,7 +65,12 @@ class MainTimeLineViewController: BaseViewController {
         return button
     }()
 
+    deinit {
+        print("test yy deinit")
+    }
+
     override func viewDidLoad() {
+        enablePrintLifeCycle = true
         super.viewDidLoad()
         hiddenNavigationBar = true
         setupUserInterface()
@@ -142,8 +146,10 @@ extension MainTimeLineViewController {
     @objc private func debugButtonPressed(_ sender: UIControl) {
 //        let vc = RxExerciseViewController()
 //        navigationController?.pushViewController(vc, animated: true)
-        let vc = UIHostingController(rootView: SwiftUIExerciseView())
-        present(vc, animated: true, completion: nil)
+//        let vc = UIHostingController(rootView: SwiftUIExerciseView())
+//        present(vc, animated: true, completion: nil)
+        returnButtonPressed(sender)
+
     }
 }
 
@@ -176,7 +182,8 @@ extension MainTimeLineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
 //        present(MyCardViewController(), animated: true, completion: nil)
-        present(SFGBaseViewController(), animated: true, completion: nil)
+//        present(SFGBaseViewController(), animated: true, completion: nil)
+        present(SecondViewController(), animated: true, completion: nil)
     }
 }
 

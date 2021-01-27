@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController {
+    var enablePrintLifeCycle: Bool = false
 
     struct Metric {
         static let navigationBarHeight: CGFloat = 44
@@ -59,9 +60,11 @@ class BaseViewController: UIViewController {
         view.backgroundColor = .UI_whiteBackgroundColor
         setTitle("🐟")
         setupNavigationBar()
+
+        printLifeCycle(#function)
     }
 
-    @objc public func returnButtonPressed(_ sender: UIButton) {
+    @objc public func returnButtonPressed(_ sender: UIControl) {
         let array = navigationController?.viewControllers
         if array?.count ?? 0 > 0 {
             if self == array?.first {
@@ -128,8 +131,18 @@ class BaseViewController: UIViewController {
 }
 
 extension BaseViewController {
+    private func printLifeCycle(_ message: String) {
+        guard enablePrintLifeCycle else { return }
+        FishPrint("\(self.classForCoder) \(message)")
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        FishPrint("\(self.classForCoder) viewDidAppear")
+        printLifeCycle(#function)
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        printLifeCycle(#function)
     }
 }
