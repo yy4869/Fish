@@ -182,8 +182,8 @@ extension MainTimeLineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
 //        present(MyCardViewController(), animated: true, completion: nil)
-//        present(SFGBaseViewController(), animated: true, completion: nil)
-        present(SecondViewController(), animated: true, completion: nil)
+        present(SFGBaseViewController(), animated: true, completion: nil)
+//        present(SecondViewController(), animated: true, completion: nil)
     }
 }
 

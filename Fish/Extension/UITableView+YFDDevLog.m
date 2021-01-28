@@ -39,7 +39,7 @@
     IMP newImplementation = imp_implementationWithBlock(^void(id sself, UITableView *tableView, NSIndexPath *indexPath) {
         ((void(*)(id, SEL, id, id))objc_msgSend)(sself, swizzleSelector, tableView, indexPath);
 
-        [weakSelf testRetainCycle:[delegate description]];
+        [weakSelf testRetainCycle:[sself description]];
     });
 
     Method originalMethod = class_getInstanceMethod(delegateClass, originalSelector);

@@ -3,3 +3,4 @@
 //
 
 #import "SFGBaseViewController.h"
+#import "WCMacroSafeValue.h"
