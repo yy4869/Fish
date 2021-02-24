@@ -15,6 +15,7 @@
 		2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5BEB5524FFFABA0068DA1B /* ToastView.swift */; };
 		2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */; };
 		2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC602578FB8B00776710 /* UIFontExtension.swift */; };
+		2E79865725E6312100DA8EB2 /* FishFontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79865625E6312100DA8EB2 /* FishFontUtils.swift */; };
 		2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */; };
 		2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */; };
 		2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87847F25B0574700A1F623 /* UIView+Preview.swift */; };
@@ -67,6 +68,7 @@
 		2E5BEB5524FFFABA0068DA1B /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExerciseViewController.swift; sourceTree = "<group>"; };
 		2E74EC602578FB8B00776710 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		2E79865625E6312100DA8EB2 /* FishFontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishFontUtils.swift; sourceTree = "<group>"; };
 		2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExerciseView.swift; sourceTree = "<group>"; };
 		2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		2E87847F25B0574700A1F623 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */,
 				2E99207F2521F2F800196FEF /* BaseControl.swift */,
 				2E0E12992589C1E5006D5E6D /* FishNetworkUtils.swift */,
+				2E79865625E6312100DA8EB2 /* FishFontUtils.swift */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */,
 				2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */,
 				2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */,
+				2E79865725E6312100DA8EB2 /* FishFontUtils.swift in Sources */,
 				2EFEF92C24F657C100524436 /* ContentView.swift in Sources */,
 				2EFEF94424F7A92D00524436 /* BindingExtensions.swift in Sources */,
 				2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */,
