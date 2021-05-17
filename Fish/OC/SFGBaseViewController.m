@@ -28,6 +28,13 @@
 }
 
 - (void)setupData {
+    NSString *str = @"test";
+    if (str.length == 5) {
+        NSLog(@"true");
+    } else {
+        NSLog(@"false");
+    }
+    NSLog(@"test yy %@", str);
 }
 
 @end

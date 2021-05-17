@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // 方法一：旧 UINavigationController
 //            let rootVC = MainTimeLineViewController()
             let rootVC = TestViewController()
+//            let rootVC = SFGBaseViewController()
             let navigation = UINavigationController(rootViewController: rootVC)
             window.rootViewController = navigation
 

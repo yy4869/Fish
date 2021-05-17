@@ -8,6 +8,9 @@
 
 import Foundation
 import RxSwift
+//import SDWebImage
+import SCRAttributedStringBuilder
+import SwiftUI
 
 class TestViewController: UIViewController {
 
@@ -15,6 +18,19 @@ class TestViewController: UIViewController {
         let button = UIButton()
         button.setTitle("click me", for: .normal)
         return button
+    }()
+
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .white
+        return imageView
+    }()
+
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        return label
     }()
 
     private let disposeBag = DisposeBag()
@@ -26,17 +42,30 @@ class TestViewController: UIViewController {
     }
 
     private func setupUserInterface() {
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view).offset(100)
+            make.size.equalTo(300)
+        }
+
         view.addSubview(button)
         button.snp.makeConstraints { make in
-            make.center.equalTo(view)
+            make.centerX.equalTo(view)
             make.size.equalTo(100)
+            make.bottom.equalTo(view).offset(-100)
+        }
+
+        view.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
         }
     }
 
     private func transform() {
         button.rx.tap.subscribe(onNext: { [weak self] in
-            self?.navigationController?.pushViewController(MainTimeLineViewController(), animated: true)
+            self?.navigationController?.pushViewController(SecondViewController(title: "push 2"), animated: true)
         }).disposed(by: disposeBag)
-        
     }
 }
+

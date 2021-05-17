@@ -19,6 +19,8 @@
 		2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */; };
 		2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */; };
 		2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87847F25B0574700A1F623 /* UIView+Preview.swift */; };
+		2E8CFAD6264B8CD6007947DC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8CFAD5264B8CD6007947DC /* Notification.swift */; };
+		2E8CFAD9264BBCD5007947DC /* UIViewController+TTPresentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */; };
 		2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */; };
 		2E9920802521F2F800196FEF /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207F2521F2F800196FEF /* BaseControl.swift */; };
 		2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */; };
@@ -34,7 +36,12 @@
 		2EAA6D6125C0064400817867 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6025C0064400817867 /* TestViewController.swift */; };
 		2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6325C0142600817867 /* SecondViewController.swift */; };
 		2EAA6DFA25C16B4300817867 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6DF925C16B4300817867 /* NSArray+Safe.m */; };
+		2ECA8C4B26521888005DDEAD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA8C4A26521888005DDEAD /* Router.swift */; };
+		2ECA8C4E265219F0005DDEAD /* YTKRouterTransitionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
+		2EDBBE10264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */; };
+		2EDBBE13264D37A100C5AEB5 /* FishOrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */; };
+		2EE4113226172F7B00DF74C7 /* TestViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */; };
 		2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAD42566189400CFF86B /* MyCardViewController.swift */; };
 		2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF500752523191200C1C05C /* MainTimeLineDataController.swift */; };
 		2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF842A5251B5A94009F2656 /* BaseViewController.swift */; };
@@ -54,7 +61,7 @@
 		2EFEF94B24F7B97000524436 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94A24F7B97000524436 /* UIImageExtension.swift */; };
 		2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */; };
 		2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF94E24F7D03700524436 /* BaseTextField.swift */; };
-		8450F08DEAFC0DC1EEF0988C /* Pods_Fish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5086181E9C3A4D8958866 /* Pods_Fish.framework */; };
+		DE926DAD32D569B2196C9590 /* Pods_Fish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F3FF73A73D4561274470A7 /* Pods_Fish.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +79,8 @@
 		2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExerciseView.swift; sourceTree = "<group>"; };
 		2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		2E87847F25B0574700A1F623 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
+		2E8CFAD5264B8CD6007947DC /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TTPresentHelper.swift"; sourceTree = "<group>"; };
 		2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishPermissionUtils.swift; sourceTree = "<group>"; };
 		2E99207F2521F2F800196FEF /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
 		2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishToolBarStackView.swift; sourceTree = "<group>"; };
@@ -91,7 +100,12 @@
 		2EAA6D6325C0142600817867 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2EAA6DF825C16B4300817867 /* NSArray+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
 		2EAA6DF925C16B4300817867 /* NSArray+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
+		2ECA8C4A26521888005DDEAD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTKRouterTransitionUtils.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
+		2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+TTAutorotation.swift"; sourceTree = "<group>"; };
+		2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientationUtils.swift; sourceTree = "<group>"; };
+		2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewControllerPreview.swift; sourceTree = "<group>"; };
 		2EE8FAD42566189400CFF86B /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		2EF500752523191200C1C05C /* MainTimeLineDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineDataController.swift; sourceTree = "<group>"; };
 		2EF842A5251B5A94009F2656 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -113,9 +127,9 @@
 		2EFEF94A24F7B97000524436 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		2EFEF94C24F7B9D100524436 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		2EFEF94E24F7D03700524436 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
-		A2A5086181E9C3A4D8958866 /* Pods_Fish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B649A399689F7C1FEB8D66 /* Pods-Fish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.release.xcconfig"; path = "Target Support Files/Pods-Fish/Pods-Fish.release.xcconfig"; sourceTree = "<group>"; };
 		F5BE89020637DEF12B2E09B9 /* Pods-Fish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.debug.xcconfig"; path = "Target Support Files/Pods-Fish/Pods-Fish.debug.xcconfig"; sourceTree = "<group>"; };
+		F7F3FF73A73D4561274470A7 /* Pods_Fish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8450F08DEAFC0DC1EEF0988C /* Pods_Fish.framework in Frameworks */,
+				DE926DAD32D569B2196C9590 /* Pods_Fish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +147,7 @@
 		1885D23CBE36CB90389E1F78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A2A5086181E9C3A4D8958866 /* Pods_Fish.framework */,
+				F7F3FF73A73D4561274470A7 /* Pods_Fish.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,9 +213,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2EE4112F26172F5F00DF74C7 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		2EE8FAD32566187000CFF86B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2EE4112F26172F5F00DF74C7 /* New Group */,
 				2EE8FAD42566189400CFF86B /* MyCardViewController.swift */,
 				2EAA6D6025C0064400817867 /* TestViewController.swift */,
 				2EAA6D6325C0142600817867 /* SecondViewController.swift */,
@@ -307,6 +330,8 @@
 				2E87847F25B0574700A1F623 /* UIView+Preview.swift */,
 				2EAA6DF825C16B4300817867 /* NSArray+Safe.h */,
 				2EAA6DF925C16B4300817867 /* NSArray+Safe.m */,
+				2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */,
+				2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -325,6 +350,10 @@
 				2E99207F2521F2F800196FEF /* BaseControl.swift */,
 				2E0E12992589C1E5006D5E6D /* FishNetworkUtils.swift */,
 				2E79865625E6312100DA8EB2 /* FishFontUtils.swift */,
+				2E8CFAD5264B8CD6007947DC /* Notification.swift */,
+				2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */,
+				2ECA8C4A26521888005DDEAD /* Router.swift */,
+				2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -456,13 +485,16 @@
 			files = (
 				2EAA6DFA25C16B4300817867 /* NSArray+Safe.m in Sources */,
 				2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */,
+				2ECA8C4B26521888005DDEAD /* Router.swift in Sources */,
 				2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */,
 				2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */,
 				2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */,
+				2EDBBE13264D37A100C5AEB5 /* FishOrientationUtils.swift in Sources */,
 				2EA830FA250F746600E59759 /* GradientView.swift in Sources */,
 				2E17B0A125234061004904FC /* TimeLimeTaskModel.swift in Sources */,
 				2E17B09F25233635004904FC /* MainTimeLineTableCell.swift in Sources */,
 				2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */,
+				2E8CFAD9264BBCD5007947DC /* UIViewController+TTPresentHelper.swift in Sources */,
 				2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */,
 				2EFEF94024F7A89700524436 /* GitHubSignupService.swift in Sources */,
 				2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */,
@@ -474,19 +506,23 @@
 				2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */,
 				2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */,
 				2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */,
+				2EE4113226172F7B00DF74C7 /* TestViewControllerPreview.swift in Sources */,
 				2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */,
 				2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */,
 				2E5BEB5224FFEAB90068DA1B /* MainTimeLineViewController.swift in Sources */,
 				2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */,
 				2E79865725E6312100DA8EB2 /* FishFontUtils.swift in Sources */,
+				2E8CFAD6264B8CD6007947DC /* Notification.swift in Sources */,
 				2EFEF92C24F657C100524436 /* ContentView.swift in Sources */,
 				2EFEF94424F7A92D00524436 /* BindingExtensions.swift in Sources */,
 				2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */,
 				2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */,
 				2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */,
 				2EAA6D4225C0007A00817867 /* UITableView+YFDDevLog.m in Sources */,
+				2ECA8C4E265219F0005DDEAD /* YTKRouterTransitionUtils.swift in Sources */,
 				2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */,
 				2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */,
+				2EDBBE10264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift in Sources */,
 				2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */,
 				2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */,
 				2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */,
@@ -638,7 +674,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Fish/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fish/Info.plist;
@@ -663,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Fish/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Fish/Info.plist;

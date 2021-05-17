@@ -11,6 +11,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
     var enablePrintLifeCycle: Bool = false
+    var enableRotate: Bool = false
 
     struct Metric {
         static let navigationBarHeight: CGFloat = 44
@@ -65,6 +66,7 @@ class BaseViewController: UIViewController {
     }
 
     @objc public func returnButtonPressed(_ sender: UIControl) {
+        FishPrint("\(self.classForCoder) rotate: \(enableRotate)")
         let array = navigationController?.viewControllers
         if array?.count ?? 0 > 0 {
             if self == array?.first {
@@ -144,5 +146,35 @@ extension BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         printLifeCycle(#function)
+    }
+}
+
+extension BaseViewController {
+    @objc func sendDismiss() {
+        NotificationCenter.default.post(name: .dismiss, object: self)
+    }
+
+    @objc func sendDismiss2() {
+        NotificationCenter.default.post(name: .dismiss2, object: self)
+    }
+
+    @objc func sendDismiss3() {
+        NotificationCenter.default.post(name: .dismiss3, object: self)
+    }
+
+    @objc func sendDismiss4() {
+        NotificationCenter.default.post(name: .dismiss4, object: self)
+    }
+
+    @objc func sendDismiss5() {
+        NotificationCenter.default.post(name: .dismiss5, object: self)
+    }
+
+    @objc func sendDismiss6() {
+        NotificationCenter.default.post(name: .dismiss6, object: self)
+    }
+
+    @objc func sendDismiss7() {
+        NotificationCenter.default.post(name: .dismiss7, object: self)
     }
 }
