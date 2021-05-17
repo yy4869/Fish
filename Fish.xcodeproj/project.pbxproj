@@ -45,6 +45,7 @@
 		2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAD42566189400CFF86B /* MyCardViewController.swift */; };
 		2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF500752523191200C1C05C /* MainTimeLineDataController.swift */; };
 		2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF842A5251B5A94009F2656 /* BaseViewController.swift */; };
+		2EFE3B2126527C5B00C6A121 /* ProtoWebViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */; };
 		2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92724F657C100524436 /* AppDelegate.swift */; };
 		2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92924F657C100524436 /* SceneDelegate.swift */; };
 		2EFEF92C24F657C100524436 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92B24F657C100524436 /* ContentView.swift */; };
@@ -109,6 +110,7 @@
 		2EE8FAD42566189400CFF86B /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		2EF500752523191200C1C05C /* MainTimeLineDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineDataController.swift; sourceTree = "<group>"; };
 		2EF842A5251B5A94009F2656 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoWebViewDemoViewController.swift; sourceTree = "<group>"; };
 		2EFEF92424F657C100524436 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFEF92724F657C100524436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EFEF92924F657C100524436 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				2EE8FAD42566189400CFF86B /* MyCardViewController.swift */,
 				2EAA6D6025C0064400817867 /* TestViewController.swift */,
 				2EAA6D6325C0142600817867 /* SecondViewController.swift */,
+				2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				2E9C30F8251CA60100F192E8 /* DashLine.swift in Sources */,
 				2EA5DC7225B580BC00741FB6 /* SFGBaseViewController.m in Sources */,
 				2EAA6D6125C0064400817867 /* TestViewController.swift in Sources */,
+				2EFE3B2126527C5B00C6A121 /* ProtoWebViewDemoViewController.swift in Sources */,
 				2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */,
 				2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */,
 				2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */,

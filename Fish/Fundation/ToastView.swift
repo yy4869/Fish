@@ -48,7 +48,7 @@ open class ToastView: UIView {
         show(inView: keyWindow, hint: hint)
     }
 
-    public class func show(inView view: UIView, hint text: String?, image: UIImage? = nil, afterDelay delay: Double = 1.5) {
+    public class func show(inView view: UIView, hint text: String?, image: UIImage? = nil, afterDelay delay: Double = 0.6) {
         let toastView = ToastView()
         toastView.textLabel.text = text ?? ""
         toastView.imageView.image = image

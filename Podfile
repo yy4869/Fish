@@ -10,8 +10,8 @@ pod 'SDWebImage', '~> 5.9'
 pod 'SCRAttributedStringBuilder', '~> 1.0'
 
 pod 'CardParts', :path => '../CardParts'
-pod 'MLeaksFinder', :configuration => ['DEBUG']
-pod 'FBRetainCycleDetector', :configuration => ['DEBUG']
+#pod 'MLeaksFinder', :configuration => ['DEBUG']
+#pod 'FBRetainCycleDetector', :configuration => ['DEBUG']
 
 target 'Fish' do
   use_frameworks!
