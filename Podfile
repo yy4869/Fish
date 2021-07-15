@@ -12,6 +12,7 @@ pod 'SCRAttributedStringBuilder', '~> 1.0'
 pod 'CardParts', :path => '../CardParts'
 #pod 'MLeaksFinder', :configuration => ['DEBUG']
 #pod 'FBRetainCycleDetector', :configuration => ['DEBUG']
+pod 'TTTAttributedLabel'
 
 target 'Fish' do
   use_frameworks!

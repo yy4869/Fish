@@ -16,6 +16,7 @@
 		2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */; };
 		2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EC602578FB8B00776710 /* UIFontExtension.swift */; };
 		2E79865725E6312100DA8EB2 /* FishFontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E79865625E6312100DA8EB2 /* FishFontUtils.swift */; };
+		2E7ABE2D268DD71900C1F1DA /* FishImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7ABE2C268DD71900C1F1DA /* FishImageUtils.swift */; };
 		2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */; };
 		2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */; };
 		2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87847F25B0574700A1F623 /* UIView+Preview.swift */; };
@@ -34,11 +35,12 @@
 		2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */; };
 		2EAA6D4225C0007A00817867 /* UITableView+YFDDevLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D3F25C0007A00817867 /* UITableView+YFDDevLog.m */; };
 		2EAA6D6125C0064400817867 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6025C0064400817867 /* TestViewController.swift */; };
-		2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6325C0142600817867 /* SecondViewController.swift */; };
+		2EAA6D6425C0142600817867 /* SecondViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6D6325C0142600817867 /* SecondViewController2.swift */; };
 		2EAA6DFA25C16B4300817867 /* NSArray+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAA6DF925C16B4300817867 /* NSArray+Safe.m */; };
 		2ECA8C4B26521888005DDEAD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA8C4A26521888005DDEAD /* Router.swift */; };
 		2ECA8C4E265219F0005DDEAD /* YTKRouterTransitionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */; };
 		2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */; };
+		2ED431AB26A02BC600522DDD /* FishViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED431AA26A02BC600522DDD /* FishViewControllerUtils.swift */; };
 		2EDBBE10264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */; };
 		2EDBBE13264D37A100C5AEB5 /* FishOrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */; };
 		2EE4113226172F7B00DF74C7 /* TestViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */; };
@@ -77,6 +79,7 @@
 		2E74EC452578DF9A00776710 /* RxExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExerciseViewController.swift; sourceTree = "<group>"; };
 		2E74EC602578FB8B00776710 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		2E79865625E6312100DA8EB2 /* FishFontUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishFontUtils.swift; sourceTree = "<group>"; };
+		2E7ABE2C268DD71900C1F1DA /* FishImageUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishImageUtils.swift; sourceTree = "<group>"; };
 		2E8496C62588638500D8B7C5 /* SwiftUIExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExerciseView.swift; sourceTree = "<group>"; };
 		2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		2E87847F25B0574700A1F623 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
@@ -98,12 +101,13 @@
 		2EAA6D3F25C0007A00817867 /* UITableView+YFDDevLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YFDDevLog.m"; sourceTree = "<group>"; };
 		2EAA6D4025C0007A00817867 /* UITableView+YFDDevLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YFDDevLog.h"; sourceTree = "<group>"; };
 		2EAA6D6025C0064400817867 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		2EAA6D6325C0142600817867 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		2EAA6D6325C0142600817867 /* SecondViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController2.swift; sourceTree = "<group>"; };
 		2EAA6DF825C16B4300817867 /* NSArray+Safe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Safe.h"; sourceTree = "<group>"; };
 		2EAA6DF925C16B4300817867 /* NSArray+Safe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Safe.m"; sourceTree = "<group>"; };
 		2ECA8C4A26521888005DDEAD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTKRouterTransitionUtils.swift; sourceTree = "<group>"; };
 		2ECD68F624FD0FAF00853B7F /* FishLayoutUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLayoutUtils.swift; sourceTree = "<group>"; };
+		2ED431AA26A02BC600522DDD /* FishViewControllerUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewControllerUtils.swift; sourceTree = "<group>"; };
 		2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+TTAutorotation.swift"; sourceTree = "<group>"; };
 		2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientationUtils.swift; sourceTree = "<group>"; };
 		2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewControllerPreview.swift; sourceTree = "<group>"; };
@@ -229,7 +233,7 @@
 				2EE4112F26172F5F00DF74C7 /* New Group */,
 				2EE8FAD42566189400CFF86B /* MyCardViewController.swift */,
 				2EAA6D6025C0064400817867 /* TestViewController.swift */,
-				2EAA6D6325C0142600817867 /* SecondViewController.swift */,
+				2EAA6D6325C0142600817867 /* SecondViewController2.swift */,
 				2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */,
 			);
 			path = ViewController;
@@ -357,6 +361,8 @@
 				2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */,
 				2ECA8C4A26521888005DDEAD /* Router.swift */,
 				2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */,
+				2E7ABE2C268DD71900C1F1DA /* FishImageUtils.swift */,
+				2ED431AA26A02BC600522DDD /* FishViewControllerUtils.swift */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -509,7 +515,7 @@
 				2EFE3B2126527C5B00C6A121 /* ProtoWebViewDemoViewController.swift in Sources */,
 				2EAA6D4125C0007A00817867 /* NSObject+YFDDevLog.m in Sources */,
 				2EFEF94224F7A91100524436 /* GitHubSignupViewModel.swift in Sources */,
-				2EAA6D6425C0142600817867 /* SecondViewController.swift in Sources */,
+				2EAA6D6425C0142600817867 /* SecondViewController2.swift in Sources */,
 				2EE4113226172F7B00DF74C7 /* TestViewControllerPreview.swift in Sources */,
 				2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */,
 				2EFEF94D24F7B9D100524436 /* UIButtonExtension.swift in Sources */,
@@ -522,9 +528,11 @@
 				2E9C30F6251C896F00F192E8 /* FishUtils.swift in Sources */,
 				2EFEF94F24F7D03700524436 /* BaseTextField.swift in Sources */,
 				2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */,
+				2ED431AB26A02BC600522DDD /* FishViewControllerUtils.swift in Sources */,
 				2EAA6D4225C0007A00817867 /* UITableView+YFDDevLog.m in Sources */,
 				2ECA8C4E265219F0005DDEAD /* YTKRouterTransitionUtils.swift in Sources */,
 				2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */,
+				2E7ABE2D268DD71900C1F1DA /* FishImageUtils.swift in Sources */,
 				2E8496C72588638500D8B7C5 /* SwiftUIExerciseView.swift in Sources */,
 				2EDBBE10264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift in Sources */,
 				2E9C30FA251CA63F00F192E8 /* UIViewExtension.swift in Sources */,

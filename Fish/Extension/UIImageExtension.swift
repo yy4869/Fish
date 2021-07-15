@@ -31,4 +31,16 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return newImage!
     }
+    
+    func scaleTo(_ scale: CGFloat) -> UIImage {
+        if scale == 1 {
+            return self
+        }
+        let scaleSize = CGSize(width: size.width * scale, height: size.height * scale)
+        UIGraphicsBeginImageContextWithOptions(scaleSize, false, UIScreen.main.scale)
+        draw(in: CGRect(origin: CGPoint(x: 0, y: 0), size: scaleSize))
+        let scaleImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return scaleImage ?? self
+    }
 }

@@ -12,6 +12,7 @@ import UIKit
 class BaseViewController: UIViewController {
     var enablePrintLifeCycle: Bool = false
     var enableRotate: Bool = false
+    var delayClose = false
 
     struct Metric {
         static let navigationBarHeight: CGFloat = 44
@@ -65,8 +66,8 @@ class BaseViewController: UIViewController {
         printLifeCycle(#function)
     }
 
-    @objc public func returnButtonPressed(_ sender: UIControl) {
-        FishPrint("\(self.classForCoder) rotate: \(enableRotate)")
+    func dismissSelf() {
+        FishPrint("\(self.classForCoder)")
         let array = navigationController?.viewControllers
         if array?.count ?? 0 > 0 {
             if self == array?.first {
@@ -79,6 +80,10 @@ class BaseViewController: UIViewController {
         }
     }
 
+    @objc public func returnButtonPressed(_ sender: UIControl) {
+        dismissSelf()
+    }
+    
     private func setupNavigationBar() {
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
@@ -138,11 +143,20 @@ extension BaseViewController {
         FishPrint("\(self.classForCoder) \(message)")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        printLifeCycle(#function)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         printLifeCycle(#function)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        printLifeCycle(#function)
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         printLifeCycle(#function)

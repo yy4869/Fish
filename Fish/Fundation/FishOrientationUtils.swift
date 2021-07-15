@@ -86,5 +86,5 @@ class FishOrientationUtils {
         navi.modalPresentationStyle = .fullScreen
         navi.setNavigationBarHidden(true, animated: false)
         viewController.present(navi, animated: true, completion: nil)
-    }
+    }    
 }

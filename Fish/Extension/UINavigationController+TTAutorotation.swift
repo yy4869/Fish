@@ -35,6 +35,26 @@ extension UINavigationController {
         if topViewController == nil {
             return false
         }
-        return topViewController is SecondViewController7
+        return false
+    }
+}
+
+extension UINavigationController {
+    func popViewController(animated: Bool, completion: @escaping ()->()) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+            completion()
+        }
+        popViewController(animated: animated)
+        CATransaction.commit()
+    }
+    
+    func pushViewController(_ vc:UIViewController, animated: Bool, completion: @escaping ()->()) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+            completion()
+        }
+        pushViewController(vc, animated: animated)
+        CATransaction.commit()
     }
 }

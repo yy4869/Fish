@@ -22,9 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             // 方法一：旧 UINavigationController
 //            let rootVC = MainTimeLineViewController()
-//            let rootVC = TestViewController()
+            let rootVC = TestViewController()
 //            let rootVC = SFGBaseViewController()
-            let rootVC = BaseProtoWebViewController(entry: EntryProto())
+//            let rootVC = BaseProtoWebViewController(entry: EntryProto())
             let navigation = UINavigationController(rootViewController: rootVC)
             window.rootViewController = navigation
 

@@ -30,6 +30,7 @@ PODS:
     - SDWebImage/Core (= 5.9.3)
   - SDWebImage/Core (5.9.3)
   - SnapKit (4.0.1)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - CardParts (from `../CardParts`)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - SCRAttributedStringBuilder (~> 1.0)
   - SDWebImage (~> 5.9)
   - SnapKit (~> 4.0.0)
+  - TTTAttributedLabel
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - SCRAttributedStringBuilder
     - SDWebImage
     - SnapKit
+    - TTTAttributedLabel
 
 EXTERNAL SOURCES:
   CardParts:
@@ -69,7 +72,8 @@ SPEC CHECKSUMS:
   SCRAttributedStringBuilder: 63c0bc0acc4197dc4bab688e12646e109324dcb3
   SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 3638b5c7308d178d6fadf9d653b0dc2e68232b64
+PODFILE CHECKSUM: b41a6e7903db573b6ef2f9547bf431ef073d9f2e
 
 COCOAPODS: 1.10.0
