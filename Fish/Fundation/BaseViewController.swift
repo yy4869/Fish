@@ -13,6 +13,10 @@ class BaseViewController: UIViewController {
     var enablePrintLifeCycle: Bool = false
     var enableRotate: Bool = false
     var delayClose = false
+    var isLand: Bool = false
+    
+    typealias BackAlert = () -> Void
+    var backButtonTapAlert: BackAlert?
 
     struct Metric {
         static let navigationBarHeight: CGFloat = 44
@@ -66,22 +70,46 @@ class BaseViewController: UIViewController {
         printLifeCycle(#function)
     }
 
+    deinit {
+        FishPrint("\(self.classForCoder) deinit")
+    }
+
     func dismissSelf() {
-        FishPrint("\(self.classForCoder)")
+        FishPrint("\(self.classForCoder) return")
+        isLand = false
+        switchDeviceToOrientation(orientation: .portrait)
         let array = navigationController?.viewControllers
         if array?.count ?? 0 > 0 {
             if self == array?.first {
-                presentingViewController?.dismiss(animated: true, completion: nil)
+                if let presentingVC = presentingViewController as? UINavigationController,
+                   presentingVC.viewControllers.count == 0 {
+                    presentingVC.presentingViewController?.dismiss(animated: true) { [weak self] in
+                        self?.backButtonTapAlert?()
+                    }
+                    return
+                }
+                presentingViewController?.dismiss(animated: true) { [weak self] in
+                    self?.backButtonTapAlert?()
+                }
             } else {
                 navigationController?.popViewController(animated: true)
             }
         } else {
-            dismiss(animated: true, completion: nil)
+            dismiss(animated: true) { [weak self] in
+                self?.backButtonTapAlert?()
+            }
         }
     }
 
     @objc public func returnButtonPressed(_ sender: UIControl) {
         dismissSelf()
+    }
+    
+    func goBackToHome() {
+        NotificationCenter.default.post(
+            name: Notification.Name(rawValue: "TTBackToLessonHomeViewControllerNotification"),
+            object: self
+        )
     }
     
     private func setupNavigationBar() {
@@ -131,6 +159,13 @@ class BaseViewController: UIViewController {
             }
         }
     }
+    
+    /// 是否隐藏导航栏
+    var hiddenReturnButton = false {
+        didSet {
+            returnButton.isHidden = hiddenReturnButton
+        }
+    }
 
     func setTitle(_ title: String) {
         titleLabel.text = title
@@ -164,31 +199,22 @@ extension BaseViewController {
 }
 
 extension BaseViewController {
-    @objc func sendDismiss() {
-        NotificationCenter.default.post(name: .dismiss, object: self)
+    func switchDeviceToOrientation(orientation: UIDeviceOrientation) {
+        UIDevice.current.setValue(UIDeviceOrientation.unknown.rawValue, forKey: "orientation")
+        UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+    }
+}
+
+extension BaseViewController {
+    override open var shouldAutorotate: Bool {
+        true
     }
 
-    @objc func sendDismiss2() {
-        NotificationCenter.default.post(name: .dismiss2, object: self)
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .all
     }
 
-    @objc func sendDismiss3() {
-        NotificationCenter.default.post(name: .dismiss3, object: self)
-    }
-
-    @objc func sendDismiss4() {
-        NotificationCenter.default.post(name: .dismiss4, object: self)
-    }
-
-    @objc func sendDismiss5() {
-        NotificationCenter.default.post(name: .dismiss5, object: self)
-    }
-
-    @objc func sendDismiss6() {
-        NotificationCenter.default.post(name: .dismiss6, object: self)
-    }
-
-    @objc func sendDismiss7() {
-        NotificationCenter.default.post(name: .dismiss7, object: self)
-    }
+    override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        .portrait
+    }    
 }

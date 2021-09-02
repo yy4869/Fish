@@ -9,37 +9,6 @@
 import Foundation
 
 extension UINavigationController {
-
-    open override var shouldAutorotate: Bool {
-        if topViewControllerShouldRotate() {
-            return true
-        }
-        return FishOrientationUtils.shouldAutorotate()
-    }
-
-    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if topViewControllerShouldRotate() {
-            return (topViewController?.supportedInterfaceOrientations)!
-        }
-        return FishOrientationUtils.supportedInterfaceOrientations()
-    }
-
-    open override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        if topViewControllerShouldRotate() {
-            return (topViewController?.preferredInterfaceOrientationForPresentation)!
-        }
-        return FishOrientationUtils.preferredInterfaceOrientationForPresentation()
-    }
-
-    func topViewControllerShouldRotate() -> Bool {
-        if topViewController == nil {
-            return false
-        }
-        return false
-    }
-}
-
-extension UINavigationController {
     func popViewController(animated: Bool, completion: @escaping ()->()) {
         CATransaction.begin()
         CATransaction.setCompletionBlock {

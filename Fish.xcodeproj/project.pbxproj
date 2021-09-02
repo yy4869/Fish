@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0BA00C26AAB18B00407A6B /* TutorBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BA00B26AAB18B00407A6B /* TutorBridge.swift */; };
+		2E0BA00E26AAB53300407A6B /* TTUIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0BA00D26AAB53300407A6B /* TTUIStackViewExtension.swift */; };
 		2E0C96552500947D00CD37EC /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0C96542500947D00CD37EC /* BaseButton.swift */; };
 		2E0E129A2589C1E5006D5E6D /* FishNetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0E12992589C1E5006D5E6D /* FishNetworkUtils.swift */; };
 		2E17B09F25233635004904FC /* MainTimeLineTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17B09E25233635004904FC /* MainTimeLineTableCell.swift */; };
@@ -21,7 +23,7 @@
 		2E8783B125B02FA000A1F623 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */; };
 		2E87848025B0574700A1F623 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87847F25B0574700A1F623 /* UIView+Preview.swift */; };
 		2E8CFAD6264B8CD6007947DC /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8CFAD5264B8CD6007947DC /* Notification.swift */; };
-		2E8CFAD9264BBCD5007947DC /* UIViewController+TTPresentHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */; };
+		2E8CFAD9264BBCD5007947DC /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8CFAD8264BBCD5007947DC /* UIViewControllerExtension.swift */; };
 		2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */; };
 		2E9920802521F2F800196FEF /* BaseControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99207F2521F2F800196FEF /* BaseControl.swift */; };
 		2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */; };
@@ -47,6 +49,7 @@
 		2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAD42566189400CFF86B /* MyCardViewController.swift */; };
 		2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF500752523191200C1C05C /* MainTimeLineDataController.swift */; };
 		2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF842A5251B5A94009F2656 /* BaseViewController.swift */; };
+		2EF90C0326A94BDB00C51FFC /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF90C0226A94BDB00C51FFC /* CodableExtension.swift */; };
 		2EFE3B2126527C5B00C6A121 /* ProtoWebViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */; };
 		2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92724F657C100524436 /* AppDelegate.swift */; };
 		2EFEF92A24F657C100524436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFEF92924F657C100524436 /* SceneDelegate.swift */; };
@@ -68,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E0BA00B26AAB18B00407A6B /* TutorBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorBridge.swift; sourceTree = "<group>"; };
+		2E0BA00D26AAB53300407A6B /* TTUIStackViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTUIStackViewExtension.swift; sourceTree = "<group>"; };
 		2E0C96542500947D00CD37EC /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		2E0E12992589C1E5006D5E6D /* FishNetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishNetworkUtils.swift; sourceTree = "<group>"; };
 		2E17B09E25233635004904FC /* MainTimeLineTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineTableCell.swift; sourceTree = "<group>"; };
@@ -84,7 +89,7 @@
 		2E8783B025B02FA000A1F623 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		2E87847F25B0574700A1F623 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		2E8CFAD5264B8CD6007947DC /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TTPresentHelper.swift"; sourceTree = "<group>"; };
+		2E8CFAD8264BBCD5007947DC /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		2E99207C2521DE9A00196FEF /* FishPermissionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishPermissionUtils.swift; sourceTree = "<group>"; };
 		2E99207F2521F2F800196FEF /* BaseControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseControl.swift; sourceTree = "<group>"; };
 		2E9C30F2251C809700F192E8 /* FishToolBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishToolBarStackView.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		2EE8FAD42566189400CFF86B /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
 		2EF500752523191200C1C05C /* MainTimeLineDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineDataController.swift; sourceTree = "<group>"; };
 		2EF842A5251B5A94009F2656 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2EF90C0226A94BDB00C51FFC /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
 		2EFE3B2026527C5B00C6A121 /* ProtoWebViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoWebViewDemoViewController.swift; sourceTree = "<group>"; };
 		2EFEF92424F657C100524436 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFEF92724F657C100524436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 		2EFEF94724F7B09C00524436 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2E0BA00D26AAB53300407A6B /* TTUIStackViewExtension.swift */,
 				2EAA6D3E25C0007900817867 /* NSObject+YFDDevLog.h */,
 				2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */,
 				2EAA6D4025C0007A00817867 /* UITableView+YFDDevLog.h */,
@@ -337,8 +344,9 @@
 				2E87847F25B0574700A1F623 /* UIView+Preview.swift */,
 				2EAA6DF825C16B4300817867 /* NSArray+Safe.h */,
 				2EAA6DF925C16B4300817867 /* NSArray+Safe.m */,
-				2E8CFAD8264BBCD5007947DC /* UIViewController+TTPresentHelper.swift */,
+				2E8CFAD8264BBCD5007947DC /* UIViewControllerExtension.swift */,
 				2EDBBE0F264D31F100C5AEB5 /* UINavigationController+TTAutorotation.swift */,
+				2EF90C0226A94BDB00C51FFC /* CodableExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -363,6 +371,7 @@
 				2ECA8C4D265219F0005DDEAD /* YTKRouterTransitionUtils.swift */,
 				2E7ABE2C268DD71900C1F1DA /* FishImageUtils.swift */,
 				2ED431AA26A02BC600522DDD /* FishViewControllerUtils.swift */,
+				2E0BA00B26AAB18B00407A6B /* TutorBridge.swift */,
 			);
 			path = Fundation;
 			sourceTree = "<group>";
@@ -496,6 +505,7 @@
 				2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */,
 				2ECA8C4B26521888005DDEAD /* Router.swift in Sources */,
 				2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */,
+				2EF90C0326A94BDB00C51FFC /* CodableExtension.swift in Sources */,
 				2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */,
 				2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */,
 				2EDBBE13264D37A100C5AEB5 /* FishOrientationUtils.swift in Sources */,
@@ -503,9 +513,11 @@
 				2E17B0A125234061004904FC /* TimeLimeTaskModel.swift in Sources */,
 				2E17B09F25233635004904FC /* MainTimeLineTableCell.swift in Sources */,
 				2E99207D2521DE9A00196FEF /* FishPermissionUtils.swift in Sources */,
-				2E8CFAD9264BBCD5007947DC /* UIViewController+TTPresentHelper.swift in Sources */,
+				2E8CFAD9264BBCD5007947DC /* UIViewControllerExtension.swift in Sources */,
 				2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */,
 				2EFEF94024F7A89700524436 /* GitHubSignupService.swift in Sources */,
+				2E0BA00C26AAB18B00407A6B /* TutorBridge.swift in Sources */,
+				2E0BA00E26AAB53300407A6B /* TTUIStackViewExtension.swift in Sources */,
 				2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */,
 				2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */,
 				2EA830F7250F73C000E59759 /* SpringInterfaceViewController.swift in Sources */,

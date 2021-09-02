@@ -12,11 +12,11 @@ import Foundation
 
 class FishOrientationUtils {
     class func shouldAutorotate() -> Bool {
-        return true
+        return false
     }
 
     class func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .all
+        return .portrait
     }
 
     class func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
@@ -47,44 +47,4 @@ class FishOrientationUtils {
         }
         return .unknown
     }
-
-    class func landPresent(
-        vc: UIViewController,
-        from viewController: UIViewController,
-        with transitionStyle: YTKRouterTransitionStyle
-    ) {
-        guard UIApplication.shared.statusBarOrientation.isPortrait
-              || transitionStyle == .present else {
-            YTKRouterTransitionUtils.show(
-                vc,
-                from: viewController,
-                with: transitionStyle
-            )
-            return
-        }
-        let navi = ForceLandscapeNavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        navi.setNavigationBarHidden(true, animated: false)
-        viewController.present(navi, animated: true, completion: nil)
-    }
-
-    class func portraitPresent(
-        vc: UIViewController,
-        from viewController: UIViewController,
-        with transitionStyle: YTKRouterTransitionStyle
-    ) {
-        guard UIApplication.shared.statusBarOrientation.isLandscape
-              || transitionStyle == .present  else {
-            YTKRouterTransitionUtils.show(
-                vc,
-                from: viewController,
-                with: transitionStyle
-            )
-            return
-        }
-        let navi = ForcePortraitNavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        navi.setNavigationBarHidden(true, animated: false)
-        viewController.present(navi, animated: true, completion: nil)
-    }    
 }

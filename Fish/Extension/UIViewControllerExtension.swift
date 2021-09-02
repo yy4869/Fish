@@ -9,43 +9,32 @@
 import Foundation
 
 extension UIViewController {
-    func presentNavigationControllerWrappedViewController(_ vc: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        present(nav, animated: animated, completion: completion)
+    func forceLandscape(_ vc: UIViewController, completion: (() -> Void)? = nil) {
+        let navi = ForceLandscapeNavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        navi.setNavigationBarHidden(true, animated: false)
+        present(navi, animated: true, completion: completion)
     }
 
-    func forceLandscape(_ vc: UIViewController) {
-        let navi = ForceLandscapeNavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        navi.setNavigationBarHidden(true, animated: false)
-        present(navi, animated: true, completion: nil)
-    }
-    
     func forceLandscapeAndDismissSelf(_ vc: UIViewController) {
-        let navi = ForceLandscapeNavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        navi.setNavigationBarHidden(true, animated: false)
-        present(navi, animated: true) {
+        forceLandscape(vc) {
             FishViewControllerUtils.removeUselessViewController(self)
         }
     }
-    
-    func forcePortrait(_ vc: UIViewController) {
+
+    func forcePortrait(_ vc: UIViewController, completion: (() -> Void)? = nil) {
         let navi = ForcePortraitNavigationController(rootViewController: vc)
         navi.modalPresentationStyle = .fullScreen
         navi.setNavigationBarHidden(true, animated: false)
-        present(navi, animated: true, completion: nil)
+        present(navi, animated: true, completion: completion)
     }
-    
+
     func forcePortraitAndDismissSelf(_ vc: UIViewController) {
-        let navi = ForcePortraitNavigationController(rootViewController: vc)
-        navi.modalPresentationStyle = .fullScreen
-        present(navi, animated: true) {
+        forcePortrait(vc) {
             FishViewControllerUtils.removeUselessViewController(self)
         }
     }
-    
+
     func pushNextVCAndDismissSelf(_ nextVC: UIViewController, animated: Bool) {
         navigationController?.pushViewController(nextVC, animated: true, completion: {
             FishViewControllerUtils.removeUselessViewController(self)

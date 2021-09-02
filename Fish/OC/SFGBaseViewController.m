@@ -9,7 +9,11 @@
 #import "SFGBaseViewController.h"
 #import "WCMacroSafeValue.h"
 
+@import Masonry;
+
 @interface SFGBaseViewController ()
+
+@property (nonatomic, strong) UIView *praiseView;
 
 @end
 
@@ -20,21 +24,29 @@
     self.navigationController.navigationBarHidden = YES;
     self.view.backgroundColor = [UIColor.redColor colorWithAlphaComponent:0.5];
     self.title = @"test";
-    [self setupData];
+    
+    [self setupUserInterface];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
-- (void)setupData {
-    NSString *str = @"test";
-    if (str.length == 5) {
-        NSLog(@"true");
-    } else {
-        NSLog(@"false");
+- (void)setupUserInterface {
+    [self.view addSubview:self.praiseView];
+    [self.praiseView mas_makeConstraints:^(MASConstraintMaker *maker) {
+        maker.centerY.equalTo(self.view);
+        maker.trailing.equalTo(self.view);
+        maker.width.equalTo(@(66));
+        maker.height.equalTo(@(34));
+    }];
+}
+
+- (UIView *)praiseView {
+    if (!_praiseView) {
+        _praiseView = [[UIView alloc] init];
     }
-    NSLog(@"test yy %@", str);
+    return _praiseView;
 }
 
 @end

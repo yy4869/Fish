@@ -13,8 +13,17 @@ pod 'CardParts', :path => '../CardParts'
 #pod 'MLeaksFinder', :configuration => ['DEBUG']
 #pod 'FBRetainCycleDetector', :configuration => ['DEBUG']
 pod 'TTTAttributedLabel'
+pod 'Masonry', '1.1.0'
+
+ENV['FAKELIVE'] = '1'
+
+if ENV['FAKELIVE'] == '1'
+    puts 'FAKELIVE true'
+else
+    puts 'FAKELIVE false'
+end
 
 target 'Fish' do
   use_frameworks!
-
+  
 end
