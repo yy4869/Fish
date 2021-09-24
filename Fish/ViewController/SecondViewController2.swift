@@ -49,7 +49,8 @@ class SecondViewController1: BaseViewController, JumpViewDelegate {
     
     func jumpViewDidPressButton(_ view: JumpView, jumpProperty: JumpProperty) {
         let vc = SecondViewController2(title: "2", isPortrait: jumpProperty.isPortrait())
-        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
+//        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
+        vc.present(in: self, animated: true, completion: nil)
     }
     
     func jumpViewDidPressRotateButton(_ view: JumpView) {
@@ -96,13 +97,17 @@ class SecondViewController2: BaseViewController, JumpViewDelegate {
     }
     
     func jumpViewDidPressButton(_ view: JumpView, jumpProperty: JumpProperty) {
-        let vc = SecondViewController3(title: "3", isPortrait: jumpProperty.isPortrait())
-        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
+//        let vc = SecondViewController3(title: "3", isPortrait: jumpProperty.isPortrait())
+//        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
     }
     
     func jumpViewDidPressRotateButton(_ view: JumpView) {
         isLand = !isLand
         switchDeviceToOrientation(orientation: isLand ? .landscapeLeft : .portrait)
+    }
+
+    override func dismissSelf() {
+        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
 

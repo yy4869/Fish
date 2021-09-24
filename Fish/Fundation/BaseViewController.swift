@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class BaseViewController: UIViewController {
-    var enablePrintLifeCycle: Bool = false
+    var enablePrintLifeCycle: Bool = true
     var enableRotate: Bool = false
     var delayClose = false
     var isLand: Bool = false
@@ -19,14 +19,14 @@ class BaseViewController: UIViewController {
     var backButtonTapAlert: BackAlert?
 
     struct Metric {
-        static let navigationBarHeight: CGFloat = 44
+        static let navigationBarHeight: CGFloat = 60
         static let horizonMargin: CGFloat = 16
         static let buttonHeight: CGFloat = 36
     }
 
     lazy var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .red.withAlphaComponent(0.5)
         return view
     }()
 
@@ -115,7 +115,7 @@ class BaseViewController: UIViewController {
     private func setupNavigationBar() {
         view.addSubview(headerView)
         headerView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(50)
             make.leading.trailing.equalTo(view)
             make.height.equalTo(Metric.navigationBarHeight)
         }
@@ -217,4 +217,11 @@ extension BaseViewController {
     override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
         .portrait
     }    
+}
+
+extension BaseViewController {
+//    @objc func injected() {
+//        print("test yy 2", #function)
+//        view.layoutIfNeeded()
+//    }
 }

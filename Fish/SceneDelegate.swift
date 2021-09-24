@@ -17,11 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let result = Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+        print("Injection", result)
 
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             // 方法一：旧 UINavigationController
 //            let rootVC = MainTimeLineViewController()
+//            let rootVC = SpringInterfaceViewController()
             let rootVC = TestViewController()
 //            let rootVC = SFGBaseViewController()
 //            let rootVC = BaseProtoWebViewController(entry: EntryProto())

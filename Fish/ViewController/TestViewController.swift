@@ -27,7 +27,18 @@ class TestViewController: BaseViewController {
         label.layer.borderColor = UIColor.orange.cgColor
         return label
     }()
-    
+
+    private lazy var gradientButton: TTGradientBorderView = {
+        let button = TTGradientBorderView()
+        button.title = "渐变"
+        button.inset = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+        button.borderLineWidth = 4
+        button.backgroundColors = [.yellow, .red]
+        button.borderColors = [.green, .blue]
+        button.layer.cornerRadius = 16
+        return button
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setTitle("Root")
@@ -47,15 +58,13 @@ class TestViewController: BaseViewController {
             make.leading.trailing.top.equalToSuperview()
             make.height.equalTo(600)
         }
-        
-        view.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { make in
+
+        view.addSubview(gradientButton)
+        gradientButton.snp.makeConstraints { make in
             make.top.equalTo(jumpView.snp.bottom)
             make.centerX.equalToSuperview()
-            make.width.equalTo(200)
-            make.height.equalTo(50)
         }
-    }    
+    }
 }
 
 extension TestViewController: JumpViewDelegate {
@@ -66,7 +75,8 @@ extension TestViewController: JumpViewDelegate {
     
     func jumpViewDidPressButton(_ view: JumpView, jumpProperty: JumpProperty) {
         let vc = SecondViewController1(title: "1", isPortrait: jumpProperty.isPortrait())
-        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
+//        JumpUtils.jump(toVC: vc, fromVC: self, jumpProperty: jumpProperty)
+        vc.present(in: self, animated: true, completion: nil)
     }
     
     @objc private func handleBackToLessonHomeViewControllerNotification(_ notification: Notification) {

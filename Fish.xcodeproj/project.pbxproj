@@ -47,6 +47,8 @@
 		2EDBBE13264D37A100C5AEB5 /* FishOrientationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */; };
 		2EE4113226172F7B00DF74C7 /* TestViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */; };
 		2EE8FAD52566189400CFF86B /* MyCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8FAD42566189400CFF86B /* MyCardViewController.swift */; };
+		2EF2400926FB2479006D2B81 /* RoomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2400826FB2479006D2B81 /* RoomNavigationController.swift */; };
+		2EF2400B26FC82C0006D2B81 /* GradientBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF2400A26FC82C0006D2B81 /* GradientBorderView.swift */; };
 		2EF500762523191200C1C05C /* MainTimeLineDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF500752523191200C1C05C /* MainTimeLineDataController.swift */; };
 		2EF842A6251B5A94009F2656 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF842A5251B5A94009F2656 /* BaseViewController.swift */; };
 		2EF90C0326A94BDB00C51FFC /* CodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF90C0226A94BDB00C51FFC /* CodableExtension.swift */; };
@@ -117,6 +119,8 @@
 		2EDBBE12264D37A100C5AEB5 /* FishOrientationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishOrientationUtils.swift; sourceTree = "<group>"; };
 		2EE4113126172F7B00DF74C7 /* TestViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewControllerPreview.swift; sourceTree = "<group>"; };
 		2EE8FAD42566189400CFF86B /* MyCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardViewController.swift; sourceTree = "<group>"; };
+		2EF2400826FB2479006D2B81 /* RoomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNavigationController.swift; sourceTree = "<group>"; };
+		2EF2400A26FC82C0006D2B81 /* GradientBorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBorderView.swift; sourceTree = "<group>"; };
 		2EF500752523191200C1C05C /* MainTimeLineDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimeLineDataController.swift; sourceTree = "<group>"; };
 		2EF842A5251B5A94009F2656 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2EF90C0226A94BDB00C51FFC /* CodableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtension.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA830F9250F746600E59759 /* GradientView.swift */,
+				2EF2400A26FC82C0006D2B81 /* GradientBorderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 		2EFEF94724F7B09C00524436 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2EF2400826FB2479006D2B81 /* RoomNavigationController.swift */,
 				2E0BA00D26AAB53300407A6B /* TTUIStackViewExtension.swift */,
 				2EAA6D3E25C0007900817867 /* NSObject+YFDDevLog.h */,
 				2EAA6D3D25C0007900817867 /* NSObject+YFDDevLog.m */,
@@ -505,6 +511,7 @@
 				2E5BEB5624FFFABA0068DA1B /* ToastView.swift in Sources */,
 				2ECA8C4B26521888005DDEAD /* Router.swift in Sources */,
 				2E9C30F3251C809700F192E8 /* FishToolBarStackView.swift in Sources */,
+				2EF2400B26FC82C0006D2B81 /* GradientBorderView.swift in Sources */,
 				2EF90C0326A94BDB00C51FFC /* CodableExtension.swift in Sources */,
 				2E74EC612578FB8B00776710 /* UIFontExtension.swift in Sources */,
 				2EFEF94624F7A95A00524436 /* LoginViewController.swift in Sources */,
@@ -517,6 +524,7 @@
 				2ECD68F724FD0FAF00853B7F /* FishLayoutUtils.swift in Sources */,
 				2EFEF94024F7A89700524436 /* GitHubSignupService.swift in Sources */,
 				2E0BA00C26AAB18B00407A6B /* TutorBridge.swift in Sources */,
+				2EF2400926FB2479006D2B81 /* RoomNavigationController.swift in Sources */,
 				2E0BA00E26AAB53300407A6B /* TTUIStackViewExtension.swift in Sources */,
 				2E74EC462578DF9A00776710 /* RxExerciseViewController.swift in Sources */,
 				2EFEF92824F657C100524436 /* AppDelegate.swift in Sources */,
@@ -701,6 +709,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Fish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -726,6 +735,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GS8ZTW7RZ6;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = Fish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
